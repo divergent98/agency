@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import logo from './img/logo.png';
 import{
     Navbar, 
     Nav,
@@ -13,7 +13,7 @@ export const Navigation = () => {
         <Container className='row '>
             <div className='col-4'>
                 {/* frontend\src\img\logo.png */}
-            <img src="./img/logo.png" alt="logo"/>
+            <img src={logo} alt="logo" className="logo"/>
             </div>
             <div className='col-8'>
                 <Nav className="align-items-left">

@@ -5,7 +5,6 @@ import{
     Navbar, 
     Nav,
     NavItem,
-    NavbarBrand,
     Container
 } from 'reactstrap'
 export const Navigation = () => {
@@ -13,7 +12,8 @@ export const Navigation = () => {
     <Navbar className='text-light bg-transparent navigation-home' >
         <Container className='row '>
             <div className='col-4'>
-            <NavbarBrand className="text-light"  href="/">My trip</NavbarBrand>
+                {/* frontend\src\img\logo.png */}
+            <img src="./img/logo.png" alt="logo"/>
             </div>
             <div className='col-8'>
                 <Nav className="align-items-left">

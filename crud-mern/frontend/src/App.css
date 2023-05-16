@@ -2,7 +2,10 @@
 
 .img {
   width: 100%;
-  height: 500px !important;
+  height: 650px !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .carousel {
@@ -13,12 +16,97 @@
 .blog-banner {
   height: 300px;
 }
+.custom-headline{
+  margin-top: 250px !important;
+  text-align: center;
+}
+.custom-headline h1{
+  margin-bottom: 50px;
+  font-size: 70px;
+  color: #fff;
+}
+.custom-headline h3 {
+  font-size: 24px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: lighter;
+}
+.custom-headline button {
+  margin-top: 50px;
+  height:60px  ;
+  width: 250px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.custom-headline button {
+  background-color: #c797eb;
+background-image: linear-gradient(315deg, #f0ecfc 0%,#c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.custom-headline button:hover{
+  background-color: #89d8d3;
+background-image: linear-gradient(315deg, #f0ecfc 0%, #a96dd4 74%);
+}
+
+.custom-headline button:before,
+.custom-headline button:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
+}
+.custom-headline button:before {
+  height: 0%;
+  width: .1px;
+}
+.custom-headline button:after {
+  width: 0%;
+  height: .1px;
+}
+.custom-headline button:hover:before {
+  height: 100%;
+}
+.custom-headline button:hover:after {
+  width: 100%;
+}
+.custom-headline button span:before,
+.custom-headline button span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
+}
 
 .blog-banner h1 {
   font-size: 96px;
   color: #2c1e27;
   padding-top: 70px !important;
 }
+
 
 .navigation-home {
   z-index: 1000;

@@ -32,9 +32,13 @@ export const MyCarousel = () => {
     <div class="carousel-item active img"  style={{ 
       backgroundImage: `url("https://images.unsplash.com/photo-1505881402582-c5bc11054f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1600&q=60")` 
     }}>
-      <h1>NASLOV</h1>
-      <h3>podnaslov</h3>
-      <button>See more...</button>
+      <div class="row justify-content-center ">
+        <div class="col-9 align-middle custom-headline">
+          <h1>Maldives</h1>
+          <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches, and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
+          <button>See more...</button>
+        </div>
+      </div>
     </div>
     <div class="carousel-item img"  style={{ 
       backgroundImage: `url("https://images.unsplash.com/photo-1553913861-c0fddf2619ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZWd5cHR8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=1600&q=60")` 

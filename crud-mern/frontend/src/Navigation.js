@@ -9,7 +9,7 @@ import{
   Nav,
   NavItem,
   NavLink,
-  Container
+
 } from 'reactstrap'
 export const Navigation = () => {
     const [collapsed, setCollapsed] = useState(true);
@@ -45,16 +45,16 @@ export const Navigation = () => {
                 <Nav className="align-items-right">
               
                     <NavItem>
-                        <Link className='btn text-light mx-3' to="/BlogPosts">Blog</Link>
+                        <Link className='btn text-light mx-3 ' to="/BlogPosts"><span className='custom-link'>Blog</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3'>Special Offers</Link>
+                        <Link className='btn text-light mx-3 '><span className='custom-link'>Special Offers</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3'>Hot Tours</Link>
+                        <Link className='btn text-light mx-3 '><span className='custom-link'>Hot Tours</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3'>Contact</Link>
+                        <Link className='btn text-light mx-3 '><span className='custom-link'>Contact</span></Link>
                     </NavItem>
               
                     <NavItem className="ms-5 ">

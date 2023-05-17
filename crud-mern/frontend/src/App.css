@@ -12,7 +12,7 @@
   display: none !important;
 }
 .logo{
-  height: 40px !important;
+  height: 60px !important;
 }
 .img {
   width: 100%;
@@ -136,6 +136,35 @@ background-image: linear-gradient(315deg, var(--darkblue)  0%, var(--blue) 74%);
   position: sticky;
 
 }
+.custom-link{
+  transition: border-width 0.4s linear;
+  width: 200px !important;
+  padding: 5px;
+}
+.link-width{
+  
+}
+.custom-link:hover{
+  border-bottom: 4px solid;
+  border-image: linear-gradient(left, var(--blue) 0%, var(--darkblue) 74%);
+  border-image: -moz-linear-gradient(left,var(--blue) 0%, var(--darkblue) 74%); /* FF3.6+ */
+  border-image: -webkit-gradient(linear, left top, right top, color-stop(0%,var(--blue)), color-stop(74%,var(--darkblue))) 1 stretch repeat; /* Chrome,Safari4+ */
+  border-image: -webkit-linear-gradient(left, var(--blue) 0%, var(--darkblue) 74%) 1 stretch repeat; /* Chrome10+,Safari5.1+ */
+  border-image: -o-linear-gradient(left, var(--blue) 0%, var(--darkblue) 74%) 1 stretch repeat; /* Opera 11.10+ */
+  border-image: -ms-linear-gradient(left, var(--blue) 0%, var(--darkblue) 74%) 1 stretch repeat; /* IE10+ */
+  border-image: linear-gradient(to right, var(--blue) 0%, var(--darkblue) 74%) 1 stretch repeat; /* W3C */
+ border-width:  4px; 
+
+}
+
+
+
+
+
+
+
+
+
 
 .navigation-admin {
   z-index: 1000;

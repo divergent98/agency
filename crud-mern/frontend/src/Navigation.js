@@ -1,22 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import logo from './img/logo.png';
 import{
-    Navbar, 
-    Nav,
-    NavItem,
-    Container
+    Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container
 } from 'reactstrap'
 export const Navigation = () => {
+    const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNavbar = () => setCollapsed(!collapsed);
   return (
-    <Navbar className='text-light bg-transparent navigation-home' >
-        <Container className='row '>
-            <div className='col-4'>
-                {/* frontend\src\img\logo.png */}
+    <div className='nav-bar'>
+    <Navbar className='hidden-big-screen'>
+        <NavbarBrand href="/" className="me-auto">
+          reactstrap
+        </NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} className="me-2" />
+        <Collapse isOpen={!collapsed} navbar>
+          <Nav navbar>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                GitHub
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar> 
+      <Navbar className='text-light navigation-home hidden-small-screen z-index-3 container'  >
+
+            <div>
+          
             <img src={logo} alt="logo" className="logo"/>
             </div>
-            <div className='col-8'>
-                <Nav className="align-items-left">
+            <div>
+                <Nav className="align-items-right">
               
                     <NavItem>
                         <Link className='btn text-light mx-3' to="/BlogPosts">Blog</Link>
@@ -33,14 +59,15 @@ export const Navigation = () => {
               
                     <NavItem className="ms-5 ">
                    
-                        <Link to="/Login" className="btn custom-btn btn-8"><span>Login
-    </span></Link>
+                        <Link to="/Login" className="btn rounded-0 custom-button">Login</Link>
                     </NavItem>
                 
                 </Nav>
             </div>
-        </Container>
+       
 
-    </Navbar>
+    </Navbar> 
+    </div>
+    
   )
 }

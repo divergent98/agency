@@ -13,8 +13,8 @@ export const Home = () => {
     <>
     <Navigation/>
     <MyCarousel/>
-    <FeaturedProducts/>
-    <RegularProducts/>
+{/*     <FeaturedProducts/>
+    <RegularProducts/> */}
     <Footer/>
     </>
   )

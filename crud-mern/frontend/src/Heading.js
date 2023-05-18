@@ -1,16 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import{
-    Navbar, 
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
     Nav,
     NavItem,
-    NavbarBrand,
+    NavLink,
     Container
 } from 'reactstrap'
 export const Heading = () => {
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => setCollapsed(!collapsed);
   return (
-    <Navbar className=" navigation-admin" >
+    <div>
+            <Navbar className='hidden-big-screen'>
+        <NavbarBrand href="/" className="me-auto">
+          reactstrap
+        </NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} className="me-2" />
+        <Collapse isOpen={!collapsed} navbar>
+          <Nav navbar>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                GitHub
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar> 
+    <Navbar className=" navigation-admin hidden-small-screen" >
         <Container className='row '>
             <div className='col-4'>
             <NavbarBrand className="text-light" href="/">My trip</NavbarBrand>
@@ -28,5 +53,6 @@ export const Heading = () => {
         </Container>
 
     </Navbar>
+    </div>
   )
 }

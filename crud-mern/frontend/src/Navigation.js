@@ -17,28 +17,34 @@ export const Navigation = () => {
   const toggleNavbar = () => setCollapsed(!collapsed);
   return (
     <div className='nav-bar'>
-    <Navbar className='hidden-big-screen'>
+    <Navbar className='hidden-big-screen bg-transparent z-index-3'>
         <NavbarBrand href="/" className="me-auto">
-          reactstrap
+        <img src={logo} alt="logo" className="logo"/>
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="me-2" />
+        <NavbarToggler onClick={toggleNavbar} className="me-2 border-0" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
+               <NavItem>
+                        <Link className='btn w-100' to="/BlogPosts"><span className='custom-link'>Blog</span></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className='btn w-100'><span className='custom-link'>Special Offers</span></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className='btn w-100'><span className='custom-link'>Hot Tours</span></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className='btn w-100'><span className='custom-link'>Contact</span></Link>
+                    </NavItem>
+                    <NavItem >
+                        <Link to="/Login" className="btn rounded-0 text-light custom-button w-100">Login</Link>
+                    </NavItem>
           </Nav>
         </Collapse>
       </Navbar> 
       <Navbar className='text-light navigation-home hidden-small-screen z-index-3 container'  >
 
             <div>
-          
             <img src={logo} alt="logo" className="logo"/>
             </div>
             <div>
@@ -56,10 +62,8 @@ export const Navigation = () => {
                     <NavItem>
                         <Link className='btn text-light mx-3 '><span className='custom-link'>Contact</span></Link>
                     </NavItem>
-              
                     <NavItem className="ms-5 ">
-                   
-                        <Link to="/Login" className="btn rounded-0 custom-button">Login</Link>
+                        <Link to="/Login" className="btn rounded-0 text-light custom-button">Login</Link>
                     </NavItem>
                 
                 </Nav>

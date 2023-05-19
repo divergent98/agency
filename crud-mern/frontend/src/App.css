@@ -30,19 +30,76 @@
   position: fixed;
 
 }
-@media (max-width: 920px) {
-  .hidden-big-screen{
-    display: block !important;
-  }
-  .hidden-small-screen{
-    display: none !important;
-  }
-  .carousel {
-    height: 600px !important;
-    margin-top: -100px !important;
-  
-  }
+.navbar-toggler:active{
+  border:none !important;
 }
+.mobile-menu{
+  position: fixed;
+  top: 80px;
+  width: 90%;
+  /* margin: auto; */
+  background-color: #ffffff26;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+
+.burger {
+  margin-top: 20px;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+  right: 2rem;
+  top: 2rem;
+  z-index: 20;
+}
+
+.burger span {
+  width: 100%;
+  height: 4px;
+  background-color: var(--tirquoise);
+  border-radius: 12px;
+  display: block;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  width: 100%;
+  background-color: var(--tirquoise);
+  display: block;
+  transition: all 0.5s ease-in-out;
+  border-radius: 12px;
+  height: 4px;
+}
+
+.burger span::before {
+  transform: translateY(-10px);
+
+}
+
+.burger span::after {
+  transform: translateY(10px);
+  margin-top: -4px;
+}
+
+
+.burger.active span {
+  background-color: transparent;
+}
+
+.burger.active span::before {
+  transform: rotateZ(45deg) translateY(0);
+}
+
+.burger.active span::after {
+  transform: rotateZ(-45deg) translateY(0);
+}
+
 .blog-banner {
   height: 300px;
 }
@@ -85,7 +142,7 @@
 }
 .custom-button {
   background-color: #c797eb;
-background-image: linear-gradient(315deg, var(--blue) 0%, var(--darkblue) 74%);
+  background-image: linear-gradient(315deg, var(--blue) 0%, var(--darkblue) 74%);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -157,6 +214,25 @@ background-image: linear-gradient(315deg, var(--darkblue)  0%, var(--blue) 74%);
 
 }
 
+@media (max-width: 920px) {
+  .hidden-big-screen{
+    display: block !important;
+  }
+  .hidden-small-screen{
+    display: none !important;
+  }
+  .carousel {
+    height: 600px !important;
+    margin-top: -100px !important;
+  
+  }
+  .custom-headline h1{
+    font-size: 55px;
+  }
+  .custom-headline h3{
+    font-size: 20px;
+  }
+}
 
 
 

@@ -13,16 +13,20 @@ import{
 } from 'reactstrap'
 export const Navigation = () => {
     const [collapsed, setCollapsed] = useState(true);
+    const burger = document.querySelector('.burger');
+  const toggleNavbar = () => {    
 
-  const toggleNavbar = () => setCollapsed(!collapsed);
+    setCollapsed(!collapsed);
+    burger.classList.toggle('active');
+}
   return (
     <div className='nav-bar'>
     <Navbar className='hidden-big-screen bg-transparent z-index-3'>
         <NavbarBrand href="/" className="me-auto">
         <img src={logo} alt="logo" className="logo"/>
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="me-2 border-0" />
-        <Collapse isOpen={!collapsed} navbar>
+        <div onClick={toggleNavbar} className="me-2 border-0 burger"><span></span></div>
+        <Collapse isOpen={!collapsed} navbar className='mobile-menu'>
           <Nav navbar>
                <NavItem>
                         <Link className='btn w-100' to="/BlogPosts"><span className='custom-link'>Blog</span></Link>

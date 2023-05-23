@@ -7,12 +7,14 @@ import { MyCarousel } from './MyCarousel'
 
 import { Navigation } from './Navigation'
 import { RegularProducts } from './RegularProduct'
+import { Services } from './Services'
 
 export const Home = () => {
   return (
     <>
     <Navigation/>
     <MyCarousel/>
+    <Services/>
 {/*     <FeaturedProducts/>
     <RegularProducts/> */}
     <Footer/>

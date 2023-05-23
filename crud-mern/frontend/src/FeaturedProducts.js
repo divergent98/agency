@@ -23,11 +23,11 @@ export const FeaturedProducts  = () => {
                 {products.map((product) => {
                   if(product.isFeatured === "true"){
                     return(
-                    <div className="col-4" key={product._id}>
+                    <div className="col-lg-4 col-md-12 col-sm-12" key={product._id}>
                       <div className="card-hover">
                         <div className="card-hover__content">
                           <h3 className="card-hover__title">
-                          <div className="col-9 m-1">{product.name}</div>
+                          <div className="m-1">{product.name}</div>
                           </h3>
                           <p class="card-hover__text">
                           {product.description}

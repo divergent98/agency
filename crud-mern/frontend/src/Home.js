@@ -14,10 +14,11 @@ export const Home = () => {
     <>
     <Navigation/>
     <MyCarousel/>
-    <Services/>
-{/*     <FeaturedProducts/>
-    <RegularProducts/> */}
-    <Footer/>
+    <FeaturedProducts/>
+     <Services/>
+{/*    
+    <RegularProducts/> 
+    <Footer/>*/}
     </>
   )
 }

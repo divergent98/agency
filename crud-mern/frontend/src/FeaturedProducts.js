@@ -25,8 +25,13 @@ export const FeaturedProducts  = () => {
                     return(       
              
                     <div className="col-lg-4 col-md-12 col-sm-12" key={product._id}>      
-                     <a href="#" >
+                     <a href="#">
                       <div className="card-hover">
+                        <img
+                          className='image'
+                          src={product.image}
+                          alt=""
+                        ></img>
                         <div className="card-hover__content">
                           <h3 className="card-hover__title">
                           <div className="m-1">{product.name}</div>
@@ -39,11 +44,6 @@ export const FeaturedProducts  = () => {
                       
                        
                         </div>
-                 
-                        <img
-                          src={product.image}
-                          alt=""
-                        ></img>
                       </div> 
                       </a>
                       </div>  

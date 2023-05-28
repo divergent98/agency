@@ -8,6 +8,7 @@ import { MyCarousel } from './MyCarousel'
 import { Navigation } from './Navigation'
 import { RegularProducts } from './RegularProduct'
 import { Services } from './Services'
+import { Promotion } from './Promotion'
 
 export const Home = () => {
   return (
@@ -15,10 +16,11 @@ export const Home = () => {
     <Navigation/>
     <MyCarousel/>
     <FeaturedProducts/>
-     <Services/>
-{/*    
-    <RegularProducts/> 
-    <Footer/>*/}
+    <Promotion/> 
+    <Services/>
+   
+    {/* <RegularProducts/>  */}
+  
     </>
   )
 }

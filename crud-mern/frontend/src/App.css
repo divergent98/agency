@@ -277,13 +277,10 @@ body{
   font-family: 'Roboto Condensed';
 }
 .custom-button {
-
   height:35px;
   width: 150px;
   color: #fff;
-
   padding: 10px 25px;
-
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -294,9 +291,6 @@ body{
    7px 7px 20px 0px rgba(0,0,0,.1),
    4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
-}
-.custom-button {
-  background-color: #c797eb;
   background-image: linear-gradient(315deg, var(--blue) 0%, var(--darkblue) 74%);
   line-height: 42px;
   padding: 0;
@@ -333,6 +327,16 @@ background-image: linear-gradient(315deg, var(--darkblue)  0%, var(--blue) 74%);
 }
 .custom-button:hover:after {
   width: 100%;
+}
+.link-button{
+  text-decoration: none !important;
+  text-align: center;
+padding-bottom: 40px;
+margin-top: -3px;
+}
+.link-button-span{
+  border-bottom: 4px solid transparent !important;
+ 
 }
 .custom-headline button{
   height: 60px;

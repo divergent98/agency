@@ -55,19 +55,19 @@ export const Navigation = () => {
                 <Nav className="align-items-right">
               
                     <NavItem>
-                        <Link className='btn text-light mx-3 ' to="/BlogPosts"><span className='custom-link'>Blog</span></Link>
+                        <Link className='btn text-light mx-3 roboto font-18' to="/BlogPosts"><span className='custom-link'>Blog</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3 '><span className='custom-link'>Special Offers</span></Link>
+                        <Link className='btn text-light mx-3 roboto font-18'><span className='custom-link'>Special Offers</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3 '><span className='custom-link'>Hot Tours</span></Link>
+                        <Link className='btn text-light mx-3 roboto font-18'><span className='custom-link'>Hot Tours</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn text-light mx-3 '><span className='custom-link'>Contact</span></Link>
+                        <Link className='btn text-light mx-3 roboto '><span className='custom-link'>Contact</span></Link>
                     </NavItem>
                     <NavItem className="ms-5 ">
-                        <Link to="/Login" className="btn rounded-0 text-light custom-button">Login</Link>
+                       <Link to="/Login" ><div className="custom-button link-button roboto font-18">Login</div></Link>
                     </NavItem>
                 
                 </Nav>

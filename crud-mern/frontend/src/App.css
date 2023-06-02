@@ -151,6 +151,12 @@ body{
 }
 .service-card:hover{
   box-shadow: 0 0 30px rgba(5,164,200,0.19);
+  cursor: pointer;
+}
+.service-card:hover .read-more-service{
+  background: linear-gradient(315deg, var(--darkblue) 0%, var(--blue) 74%);
+  -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 .burger {
   margin-top: 20px;
@@ -246,10 +252,23 @@ body{
 }
 .roboto{
   font-family: 'Roboto Condensed' !important;
+  font-weight: lighter;
 }
 .blinker{
   font-family: 'Blinker';
   font-weight: bold !important;
+}
+.modal-image{
+  width: 100%;
+
+}
+.modal-image-div{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(5,164,200,0.19);
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: -70px;
 }
 .font-16{
   font-size: 16px !important;

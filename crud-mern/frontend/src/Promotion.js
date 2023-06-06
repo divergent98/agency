@@ -19,7 +19,7 @@ export const Promotion  = () => {
             <p className='custom-paragraph'>
             Hop aboard our iconic and charming yellow buses, reminiscent of a bygone era, and get ready for an unforgettable adventure. 
             </p>
-            <Link className='blinker capitalize space-between font-18'>Read more...</Link>
+            <Link className='blinker capitalize decoration-none space-between font-18'>Read more...</Link>
             </div>
           </div>
           <div className="row">
@@ -33,10 +33,11 @@ export const Promotion  = () => {
             Escape to a world of opulence and tranquility at our luxurious resort in the Philippines. Nestled amidst pristine landscapes, our property offers a serene sanctuary where you can unwind and rejuvenate.
             </p>
             <p className='custom-paragraph'>
-    Book your dream vacation today and let us pamper you in a world of elegance and serenity. Discover the perfect blend of relaxation, adventure, and indulgence as you create memories to last a lifetime.
+            Book your dream vacation in a world of elegance. Discover the perfect blend of relaxation, adventure, and indulgence as you create memories to last a lifetime.
             </p>
+            <Link className='blinker capitalize decoration-none space-between font-18'>Read more...</Link>
             </div>
-            <Link className='read-more-promotions'>Read more...</Link>
+            
             <div className='col-6 promotion-image' style={{ backgroundImage: `url(${luxpool})` }}></div>
           </div>
         </div>

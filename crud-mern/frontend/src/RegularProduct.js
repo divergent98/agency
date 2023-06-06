@@ -28,6 +28,7 @@ export const RegularProducts = () => {
               if (product.isFeatured === "false") {
                 return (
                   <div className="col-3 ">
+                    <Link className="decoration-none">
                     <figure class="snip1418" key={product._id}>
                       <img src={product.image} alt="sample85" />
                       <svg
@@ -47,14 +48,15 @@ export const RegularProducts = () => {
                           class="transition-all duration-300 ease-in-out delay-150 path-0"
                         ></path>
                       </svg>
-                      <figcaption className="text-center">
+                      <figcaption className="text-center roboto font-light">
                         <h3>{product.name}</h3>
                         <p>{product.price}$</p>
                         <p>{product.description}</p>
-                        <p className="mt-3">See offer</p>
+                        <p className="mt-5 decoration-none font-18">See offer</p>
                       </figcaption>
-                      <a href="#"></a>
+                     
                     </figure>
+                    </Link>
                   </div>
                 );
               } else {

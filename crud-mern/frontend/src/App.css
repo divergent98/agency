@@ -286,7 +286,10 @@ body{
   text-transform: capitalize;
 }
 .space-between{
-  
+  letter-spacing: 3px;
+}
+.decoration-none{
+  text-decoration: none;
 }
 .gradient-headline:hover{
   background: linear-gradient(315deg, var(--blue) 0%, var(--darkblue) 74%);

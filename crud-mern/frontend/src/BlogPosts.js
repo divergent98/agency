@@ -12,6 +12,10 @@ import {
 } from "reactstrap";
 import { Footer } from "./Footer";
 
+import iceland from "./img/iceland.jpg";
+import positano from "./img/positano.jpg";
+import vacation from "./img/vacation.jpg";
+
 export const BlogPosts = () => {
   const [posts, setPosts] = React.useState(null);
 
@@ -25,13 +29,18 @@ export const BlogPosts = () => {
     <>
       <Navigation />
 
-      <div
-        className="blog-banner"
-        style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1482059470115-0aadd6bf6834?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80")`,
-        }}
-      >
-        <h1 className="text-center align-middle pt-5">Blog</h1>
+      <div className="container-fluid g-0 blog-container-banner">
+        <div className="row g-0">
+        <div className="col-6 main-blog"  style={{ backgroundImage: `url(${positano})` }}>
+          <h2></h2>
+        </div>
+        <div className="col-6">
+
+            <div className="col-12 side-blog" style={{ backgroundImage: `url(${iceland})` }}></div>
+            <div className="col-12 side-blog" style={{ backgroundImage: `url(${vacation})` }}></div>
+
+        </div>
+        </div>
       </div>
       {posts ? (
         <div className="row justify-content-center mt-5">

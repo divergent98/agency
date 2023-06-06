@@ -387,11 +387,24 @@ margin-top: -3px;
   height: 60px;
   width: 250px;
   margin-top: 30px;
+
 }
-.blog-banner h1 {
-  font-size: 96px;
-  color: #2c1e27;
-  padding-top: 70px !important;
+.main-blog{
+  width: 100%;
+  height: 600px; 
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--gray)
+}
+.side-blog{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--gray)
+}
+.blog-container-banner{
+  margin-top: -100px;
 }
 .promotion-image{
   width: 90%;

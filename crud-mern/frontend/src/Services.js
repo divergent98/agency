@@ -13,7 +13,7 @@ export const Services = () => {
   const toggleService = () => setModalService(!modalService);
   const toggleWorld = () => setModalWorld(!modalWorld);
   return (
-    <div className="background-gray">
+    <div className="background-gray py-5">
       <div className="container  ">
         <div className="row text-center">
           <h1 className="gradient-headline big-headline pb-5 pt-5">

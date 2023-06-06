@@ -15,7 +15,7 @@ export const RegularProducts = () => {
   if (!products) return null;
 
   return (
-    <div className="container">
+    <div className="container py-5">
       <div className="row">
         <h1 className="text-center mt-5 pb-5 gradient-headline big-headline">
           Check out our offer

@@ -15,7 +15,7 @@ export const FeaturedProducts  = () => {
       if (!products) return null;
       
         return (
-          <div class="row justify-content-center">
+          <div class="row justify-content-center py-5 mb-5">
             <div class="col-12">
               <h1 className='text-center mt-5 pb-5 gradient-headline big-headline'>
                 Most popular destinations
@@ -30,7 +30,7 @@ export const FeaturedProducts  = () => {
                     return(       
              
                     <div className="col-lg-4 col-md-12 col-sm-12" key={product._id}>      
-                     <a href="#">
+                     <a href="#" className='card-link'>
                     
                         <div class="content">
                           <a href={product.image} target="_blank">
@@ -39,12 +39,19 @@ export const FeaturedProducts  = () => {
                             <div class="content-details fadeIn-top">
                               <h3 className='blinker'>{product.name}</h3>
                               <p className='roboto font-16'>{product.description}</p>
+                              <p className='roboto font-18'>See offer</p>
+                            </div>  
+                            
+                          </a>  
+                      
+                       <div className='visible-content'>
+                            <h3 className='blinker'>{product.name}</h3>
+                              <p className='roboto font-16'>{product.description}</p>
                             </div>
-                          </a>
                         </div>
                      
-             
-                      </a>
+                      </a> 
+                     
                       </div>  
                    )
                   }else{

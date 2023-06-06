@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 export const MyCarousel = () => {
   return (
@@ -10,8 +11,14 @@ export const MyCarousel = () => {
       <div class="row justify-content-center ">
         <div class="col-9 align-middle custom-headline">
           <h1>Maldives</h1>
-          <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches, and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
-          <button className="custom-button">See more...</button>
+          <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches,<br></br> and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
+          <div className="row justify-content-center">
+        <div className="col-3">
+          <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3">
+            See more...
+          </Link>
+        </div>
+      </div>
         </div>
       </div>
     </div>
@@ -21,8 +28,14 @@ export const MyCarousel = () => {
        <div class="row justify-content-center ">
         <div class="col-9 align-middle custom-headline">
           <h1>Egypt</h1>
-          <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches,<b></b> and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
-          <button className="custom-button">See more...</button>
+          <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches,<br></br> and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
+          <div className="row justify-content-center">
+        <div className="col-3">
+          <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3">
+            See more...
+          </Link>
+        </div>
+      </div>
         </div>
       </div>
     </div>
@@ -33,7 +46,13 @@ export const MyCarousel = () => {
         <div class="col-9 align-middle custom-headline">
           <h1>Switzerland</h1>
           <h3>Visit the Maldives for its breathtaking turquoise waters, pristine white sandy beaches, <br></br>and luxurious resorts, offering a perfect escape in a tropical paradise.</h3>
-          <button className="custom-button">See more...</button>
+          <div className="row justify-content-center">
+        <div className="col-3">
+          <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3">
+            See more...
+          </Link>
+        </div>
+      </div>
         </div>
       </div>
     </div>

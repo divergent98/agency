@@ -52,7 +52,7 @@ export const RegularProducts = () => {
                         <h3>{product.name}</h3>
                         <p>{product.price}$</p>
                         <p>{product.description}</p>
-                        <p className="mt-5 decoration-none font-18">See offer</p>
+                        <p className="mt-5 decoration-none font-18 gradient-headline">See offer</p>
                       </figcaption>
                      
                     </figure>

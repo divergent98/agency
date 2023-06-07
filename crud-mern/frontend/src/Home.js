@@ -9,6 +9,7 @@ import { RegularProducts } from "./RegularProduct";
 import { Services } from "./Services";
 import { Promotion } from "./Promotion";
 
+
 export const Home = () => {
   return (
     <>
@@ -18,6 +19,7 @@ export const Home = () => {
       <Promotion />
       <Services />
       <RegularProducts />
+      <Footer />
     </>
   );
 };

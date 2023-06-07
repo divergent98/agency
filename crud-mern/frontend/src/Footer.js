@@ -1,75 +1,36 @@
 import React from "react";
-
+import instagram from "./img/instagram.png";
+import youtube from "./img/youtube.png";
+import telegram from "./img/telegram.png";
+import whatsapp from "./img/whatsapp.png";
 export const Footer = () => {
   return (
-    <footer>
-      <div className="footer-content">
-        
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae
-          felis scelerisque, gravida sapien non, cursus augue. Aenean id pretium
-          turpis. Suspendisse eros nunc, sollicitudin nec.
-        </p>
-
-        <ul className="socials">
-          <li>
-            <a href="#">
-              <i className="fa fa-facebook"></i>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i className="fa fa-twitter"></i>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i className="fa fa-google-plus"></i>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i className="fa fa-youtube"></i>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i className="fa fa-linkedin-square"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="footer-bottom">
-        <p>
-          Copyright <span id="year"></span> <a href="#">lila.the.aen.seidhe</a>{" "}
-        </p>
-
-        <div className="footer-menu">
-          <ul className="f-menu">
-            <li>
-              <a href="">Home</a>
-            </li>
-
-            <li>
-              <a href="">About</a>
-            </li>
-
-            <li>
-              <a href="">Contact</a>
-            </li>
-
-            <li>
-              <a href="">Blog</a>
-            </li>
-          </ul>
+    <div className="background-dark-gray"> 
+    <div className="container">
+      <div className="row">      
+        <div className="col-3 social">
+          <div className="logo">
+            logo
+          </div>
+          <div className="social-media-icons">
+          <h6 class="text-primary mt-4 mb-3">Follow Us</h6>
+          <div class="d-flex">
+                        <a class="mx-2" href="#"><img src={instagram} /></a>
+                        <a class="mx-2" href="#"><img src={youtube} /></a>
+                        <a class="mx-2" href="#"><img src={telegram} /></a>
+                        <a class="mx-2" href="#"><img src={whatsapp} /></a>
+                    </div>
+          </div>
         </div>
+        <div className="col-3 contact">
+
+        </div>
+        <div className="col-3 polices"></div>
+        <div className="col-3 quick-links"></div>
+  
+
       </div>
-    </footer>
+    </div>
+    </div>
   );
 };

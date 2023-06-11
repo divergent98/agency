@@ -10,7 +10,7 @@ export const Footer = () => {
     <div className="background-dark-gray">
       <div className="container py-5">
         <div className="row">
-          <div className="col-3 social">
+          <div className="col-3 social" >
             <div className="logo">
               <img className="footer-logo" src={logo} />
             </div>
@@ -36,16 +36,21 @@ export const Footer = () => {
           </div>
 
           <div className="col-3 polices">
-            <h6 class="gradient-headline font-24 blinker mt-4 mb-3">
+            <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Company polices
             </h6>
-       
+            <ul className="font-18 list-decoration">
+              <li><Link className="decoration-none text-light">Legal</Link></li>
+              <li><Link className="decoration-none text-light">Terms and conditions</Link></li>
+              <li><Link className="decoration-none text-light">Support</Link></li>
+              <li><Link className="decoration-none text-light">Careers</Link></li>
+            </ul>
           </div>
           <div className="col-3 quick-links">
-            <h6 class="gradient-headline font-24 blinker mt-4 mb-3">
+            <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Site Navigation
             </h6>
-            <ul className="font-18">
+            <ul className="font-18  list-decoration">
               <li><Link className="decoration-none text-light">Home</Link></li>
               <li><Link className="decoration-none text-light">Hot tours</Link></li>
               <li><Link className="decoration-none text-light">Special offers</Link></li>
@@ -53,7 +58,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-3 contact">
-            <h6 class="gradient-headline font-24 blinker mt-4 mb-3">
+            <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Contact us
             </h6>
           </div>

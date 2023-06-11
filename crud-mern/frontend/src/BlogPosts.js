@@ -31,15 +31,45 @@ export const BlogPosts = () => {
 
       <div className="container-fluid g-0 blog-container-banner">
         <div className="row g-0">
-        <div className="col-6 main-blog"  style={{ backgroundImage: `url(${positano})` }}>
-          <h2></h2>
-        </div>
-        <div className="col-6">
+          <div
+            className="col-6 main-blog"
+            style={{ backgroundImage: `url(${positano})` }}
+          >
+            <div className="title-style">
+              <hr></hr>
+              <h2 className="text-light">
+                Positano: A Breathtaking Coastal Gem Awaiting Your Arrival
+              </h2>
+            </div>
+          </div>
 
-            <div className="col-12 side-blog" style={{ backgroundImage: `url(${iceland})` }}></div>
-            <div className="col-12 side-blog" style={{ backgroundImage: `url(${vacation})` }}></div>
-
-        </div>
+          <div className="col-6">
+            Iceland Unveiled: A Journey into the Enchanting Land of Fire and Ice
+            <div
+              className="col-12 side-blog"
+              style={{ backgroundImage: `url(${iceland})` }}
+            >
+              <div className="title-style-small">
+                <hr></hr>
+                <h2 className="text-light font-24">
+                  Iceland Unveiled: A Journey into the Enchanting Land of Fire
+                  and Ice
+                </h2>
+              </div>
+            </div>
+            <div
+              className="col-12 side-blog"
+              style={{ backgroundImage: `url(${vacation})` }}
+            >
+              <div className="title-style-small">
+                <hr></hr>
+                <h2 className="text-light font-24">
+                  Paradise Beckons: 5 Essential Tips for Your Tropical Travel
+                  Adventure
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {posts ? (
@@ -49,62 +79,77 @@ export const BlogPosts = () => {
               <div className="">
                 {posts.map((post) => {
                   return (
-               
- 
-                      <figure class="snip1418 background-color" key={post._id}>
-                        <img
-                          src={post.image}
-                          alt="sample85"
-                        />
+                    <figure class="snip1418 background-color" key={post._id}>
+                      <img src={post.image} alt="sample85" />
 
-                        <figcaption>
-                          <h3>{post.title}</h3>
-                          <p>Author: Admin</p>
-                          <p>
-                              {post.description}
-                          </p>
-                          <Button className="mt-5">
-                          Read More...
-                        </Button>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-              
+                      <figcaption>
+                        <h3>{post.title}</h3>
+                        <p>Author: Admin</p>
+                        <p>{post.description}</p>
+                        <Button className="mt-5">Read More...</Button>
+                      </figcaption>
+                      <a href="#"></a>
+                    </figure>
                   );
                 })}
               </div>
             }
           </div>
           <div className="col-2 ms-5 mt-5">
-     
             <h3 class="head1 ms-4">CATEGORIES</h3>
-					<ul class="list">
-						<li><a href="#">Suspendisse massa mi </a></li>
-						<li><a href="#">Porttitor at velit id </a></li>
-						<li><a href="#">Congue adipiscing </a></li>
-						<li><a href="#">Vestibulum vitae porta </a></li>
-						<li><a href="#">Vivamus ac sodales </a></li>
-						<li><a href="#">Massa quis adipiscing </a></li>
-						<li><a href="#">Phasellus hendrerit </a></li>
-						<li><a href="#">Libero in sapien </a></li>
-						<li><a href="#">Dignissim vel imperdiet </a></li>
-					</ul>
-					<h3 class="head1 ms-4">ARCHIVES</h3> 
-					<ul class="list">
-						<li><a href="#">November 2022</a></li>
-						<li><a href="#">October 2022</a></li>
-						<li><a href="#">September 2022</a></li>
-						<li><a href="#">August 2022</a></li>
-						<li><a href="#">July 2022</a></li>
-					</ul>
-            </div>
-     
+            <ul class="list">
+              <li>
+                <a href="#">Suspendisse massa mi </a>
+              </li>
+              <li>
+                <a href="#">Porttitor at velit id </a>
+              </li>
+              <li>
+                <a href="#">Congue adipiscing </a>
+              </li>
+              <li>
+                <a href="#">Vestibulum vitae porta </a>
+              </li>
+              <li>
+                <a href="#">Vivamus ac sodales </a>
+              </li>
+              <li>
+                <a href="#">Massa quis adipiscing </a>
+              </li>
+              <li>
+                <a href="#">Phasellus hendrerit </a>
+              </li>
+              <li>
+                <a href="#">Libero in sapien </a>
+              </li>
+              <li>
+                <a href="#">Dignissim vel imperdiet </a>
+              </li>
+            </ul>
+            <h3 class="head1 ms-4">ARCHIVES</h3>
+            <ul class="list">
+              <li>
+                <a href="#">November 2022</a>
+              </li>
+              <li>
+                <a href="#">October 2022</a>
+              </li>
+              <li>
+                <a href="#">September 2022</a>
+              </li>
+              <li>
+                <a href="#">August 2022</a>
+              </li>
+              <li>
+                <a href="#">July 2022</a>
+              </li>
+            </ul>
           </div>
-     
+        </div>
       ) : (
         ""
       )}
-      <Footer/>
+      <Footer />
     </>
   );
 };

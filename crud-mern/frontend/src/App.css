@@ -642,17 +642,28 @@ body {
 .footer-headline {
   margin-left: 30px;
 }
-
+.title-space{
+  height: 456px;
+}
 .title-style {
   position: relative;
-  top: 75%;
-  margin-left: 30px;
+ height: 167px;
+background-color: #545454;
+padding-left:30px;
+padding-top: 5px;
+
+}
+.title-space-small{
+  height: 170px;
 }
 .title-style-small{
   position: relative;
-  top: 60%;
-  margin-left: 30px;
+  height: 129px;
+  background-color: #545454;
+  padding-left:30px;
+  padding-top: 5px;
 }
+
 .title-style hr,
 .title-style-small hr{
   height: 4px;

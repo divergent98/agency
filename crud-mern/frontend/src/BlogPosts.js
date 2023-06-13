@@ -34,12 +34,14 @@ export const BlogPosts = () => {
           <div
             className="col-6 main-blog"
             style={{ backgroundImage: `url(${positano})` }}
-          >
+          >        <div className="title-space"> </div>
             <div className="title-style">
+      
               <hr></hr>
               <h2 className="text-light">
                 Positano: A Breathtaking Coastal Gem Awaiting Your Arrival
               </h2>
+             
             </div>
           </div>
 
@@ -49,24 +51,30 @@ export const BlogPosts = () => {
               className="col-12 side-blog"
               style={{ backgroundImage: `url(${iceland})` }}
             >
+              <div className="title-space-small"> </div>
               <div className="title-style-small">
+                <div>
                 <hr></hr>
                 <h2 className="text-light font-24">
-                  Iceland Unveiled: A Journey into the Enchanting Land of Fire
+                  Iceland Unveiled: A Journey into<br></br>  the Enchanting Land of Fire
                   and Ice
                 </h2>
+                </div>
               </div>
             </div>
             <div
               className="col-12 side-blog"
               style={{ backgroundImage: `url(${vacation})` }}
             >
+                <div className="title-space-small"> </div>
               <div className="title-style-small">
+                <div>
                 <hr></hr>
                 <h2 className="text-light font-24">
-                  Paradise Beckons: 5 Essential Tips for Your Tropical Travel
+                  Paradise Beckons: 5 Essential Tips<br></br> for Your Tropical Travel
                   Adventure
                 </h2>
+                </div>
               </div>
             </div>
           </div>

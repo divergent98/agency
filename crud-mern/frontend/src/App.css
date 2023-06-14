@@ -642,34 +642,64 @@ body {
 .footer-headline {
   margin-left: 30px;
 }
-.title-space{
+.title-space {
   height: 456px;
 }
 .title-style {
   position: relative;
- height: 167px;
-background-color: #545454;
-padding-left:30px;
-padding-top: 5px;
-
+  height: 167px;
+  background-color: #05a4c84b;
+  padding-left: 30px;
+  padding-top: 5px;
+  transition: 0.5s;
 }
-.title-space-small{
+
+.title-space-small {
   height: 170px;
 }
-.title-style-small{
+.title-style-small {
   position: relative;
   height: 129px;
-  background-color: #545454;
-  padding-left:30px;
+  background-color: #05a4c84b;
+
+  cursor: pointer;
+  padding-left: 30px;
   padding-top: 5px;
 }
 
 .title-style hr,
-.title-style-small hr{
+.title-style-small hr {
   height: 4px;
   width: 20%;
   border-width: 0;
   color: gray;
+  background: var(--darkblue);
+  opacity: 1;
+}
+.main-blog:hover .title-style,
+.side-blog:hover .title-style-small {
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.main-blog:hover,
+.side-blog:hover {
+  cursor: pointer;
+}
+.tag {
+  background-color: var(--darkblue);
+  width: 150px !important;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Blinker";
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+.tag-line {
+  height: 4px;
+  width: 20%;
+  border-width: 0;
+
   background: var(--darkblue);
   opacity: 1;
 }

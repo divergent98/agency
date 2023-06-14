@@ -81,12 +81,18 @@ export const BlogPosts = () => {
         </div>
       </div>
       {posts ? (
+        <div className="container">
         <div className="row justify-content-center mt-5">
-          <div className="col-5 my-5">
+          <div className="col-9 my-5">
+            <div className="row"> 
+              <span className="tag">Highlighted</span>
+              <hr className="tag-line"></hr>
+            </div>
             {
-              <div className="">
+              <div className="row">
                 {posts.map((post) => {
                   return (
+                    <div className="col-4">
                     <figure class="snip1418 background-color" key={post._id}>
                       <img src={post.image} alt="sample85" />
 
@@ -98,6 +104,7 @@ export const BlogPosts = () => {
                       </figcaption>
                       <a href="#"></a>
                     </figure>
+                  </div>
                   );
                 })}
               </div>
@@ -153,6 +160,7 @@ export const BlogPosts = () => {
               </li>
             </ul>
           </div>
+        </div>
         </div>
       ) : (
         ""

@@ -93,7 +93,7 @@ export const BlogPosts = () => {
                 {posts.map((post) => {
                   return (
                     <div className="col-4">
-                    <figure class="snip1418 background-color" key={post._id}>
+                    <figure class="snip background-color" key={post._id}>
                       <img src={post.image} alt="sample85" />
 
                       <figcaption>

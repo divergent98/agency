@@ -520,9 +520,12 @@ body {
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 
-.snip1418 {
+.snip {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   font-family: "Blinker";
-  position: relative;
+
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
@@ -539,30 +542,36 @@ body {
   perspective: 20em;
 }
 
-.snip1418 * {
+.snip * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-.snip1418 img {
+.snip img {
   width: 100%;
   height: 350px;
   vertical-align: top;
   position: relative;
 }
 
-.snip1418 figcaption {
+.snip figcaption {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.snip1418 h3,
-.snip1418 p {
+.snip h3,
+.snip p {
   margin: 0;
 }
 
-.snip1418 h3 {
+.snip h3 {
+  flex-basis: 50%; /* Adjust the width as needed */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 10px;
@@ -572,20 +581,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.snip1418 p {
+.snip p {
   font-size: 18px;
   font-family: "Roboto Condensed";
   font-weight: lighter;
 }
 
-.snip1418 .price {
+.snip .price {
   font-weight: 500;
   font-size: 1.5em;
   line-height: 48px;
   letter-spacing: 1px;
 }
 
-.snip1418 .price s {
+.snip .price s {
   margin-right: 5px;
   opacity: 0.5;
   font-size: 0.9em;

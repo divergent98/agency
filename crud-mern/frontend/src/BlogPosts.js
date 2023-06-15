@@ -98,9 +98,11 @@ export const BlogPosts = () => {
 
                       <figcaption>
                         <h3>{post.title}</h3>
-                        <p>Author: Admin</p>
+                        <hr></hr>
+                        <p className="author">Author: Admin</p>
+                        <hr></hr>
                         <p>{post.description}</p>
-                        <Button className="mt-5">Read More...</Button>
+                 
                       </figcaption>
                       <a href="#"></a>
                     </figure>

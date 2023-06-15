@@ -510,22 +510,13 @@ body {
   font-size: 32px;
 }
 
-.background-color {
-  border: 1px solid #ffcee9;
-  box-shadow: 0px 0px 52px 14px rgba(255, 206, 233, 1);
-  -webkit-box-shadow: 0px 0px 52px 14px rgba(255, 206, 233, 1);
-  -moz-box-shadow: 0px 0px 52px 14px rgba(255, 206, 233, 1);
-}
 
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 
 .snip {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   font-family: "Blinker";
-
+  position: relative;
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
@@ -534,19 +525,15 @@ body {
   background: #ffffff;
   text-align: left;
   color: #000000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   font-size: 16px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-perspective: 20em;
-  perspective: 20em;
+  transition: 0.5s;
+  transform: scale(0.97);
 }
 
-.snip * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+.snip:hover{
+
+  transform: scale(1.0); 
+  cursor: pointer;
 }
 
 .snip img {
@@ -557,9 +544,7 @@ body {
 }
 
 .snip figcaption {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  padding-top: 20px;
 }
 
 .snip h3,
@@ -568,10 +553,6 @@ body {
 }
 
 .snip h3 {
-  flex-basis: 50%; /* Adjust the width as needed */
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 10px;
@@ -587,18 +568,7 @@ body {
   font-weight: lighter;
 }
 
-.snip .price {
-  font-weight: 500;
-  font-size: 1.5em;
-  line-height: 48px;
-  letter-spacing: 1px;
-}
 
-.snip .price s {
-  margin-right: 5px;
-  opacity: 0.5;
-  font-size: 0.9em;
-}
 .shape-divider {
   margin-top: -50px;
   z-index: 50;
@@ -703,12 +673,14 @@ body {
   font-family: "Blinker";
   letter-spacing: 2px;
   font-weight: bolder;
+  margin-left: 20px;
 }
 .tag-line {
   height: 4px;
   width: 20%;
   border-width: 0;
-
+  margin-left: 20px;
+  margin-right: 20px;
   background: var(--darkblue);
   opacity: 1;
 }

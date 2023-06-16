@@ -8,6 +8,8 @@ function CreatePost() {
   const [post, setPost] = useState({
     title: "",
     description: "",
+    content: "",
+    category: "",
     image: ""
   });
   const handleChange = (event) => {
@@ -54,6 +56,20 @@ function CreatePost() {
             name="description"
             value={post.description}
             placeholder="description"
+            onChange={handleChange}
+          />
+              <Form.Label>Content</Form.Label>
+          <Form.Control
+            name="content"
+            value={post.content}
+            placeholder="content"
+            onChange={handleChange}
+          />
+              <Form.Label>Category</Form.Label>
+          <Form.Control
+            name="category"
+            value={post.category}
+            placeholder="category"
             onChange={handleChange}
           />
           <Form.Label>Image</Form.Label>

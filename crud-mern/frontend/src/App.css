@@ -568,6 +568,10 @@ body {
   font-weight: lighter;
 }
 
+.regular-product{
+  background-color:#F8F8F8;
+  border: 1px solid #f8f8f8;
+}
 
 .shape-divider {
   margin-top: -50px;
@@ -584,8 +588,11 @@ body {
   list-style-type: none;
 }
 
-.background-regular {
-  background-color: #ffcee96c;
+.avatar{
+  width: 24px !important;
+  height: 24px !important;
+
+
 }
 
 .postsImageAdmin {
@@ -683,4 +690,10 @@ body {
   margin-right: 20px;
   background: var(--darkblue);
   opacity: 1;
+}
+.author{
+  display: flex;
+}
+.snip-line{
+  color: var(--darkblue);
 }

@@ -12,19 +12,23 @@ function Posts() {
     id: "",
     title: "",
     description: "",
+    content: "",
+    category: "",
     image: "",
   });
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const updatePost = (id, title, description, image) => {
+  const updatePost = (id, title, description, content, category, image) => {
     setUpdatedPost((prev) => {
       return {
         ...prev,
         id: id,
         title: title,
         description: description,
+        content: content,
+        category: category,
         image: image,
       };
     });
@@ -106,6 +110,20 @@ function Posts() {
             onChange={handleChange}
             value={updatedPost.description ? updatedPost.description : ""}
           />
+                <Form.Label>Content</Form.Label>
+          <Form.Control
+            placeholder="content"
+            name="content"
+            onChange={handleChange}
+            value={updatedPost.content ? updatedPost.content : ""}
+          />
+                <Form.Label>Category</Form.Label>
+          <Form.Control
+            placeholder="category"
+            name="category"
+            onChange={handleChange}
+            value={updatedPost.category ? updatedPost.category : ""}
+          />
           <Form.Label>Image</Form.Label>
           <Form.Control
             placeholder="image"
@@ -142,6 +160,8 @@ function Posts() {
                             post._id,
                             post.title,
                             post.description,
+                            post.category,
+                            post.category,
                             post.image
                           )
                         }

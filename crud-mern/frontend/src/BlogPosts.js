@@ -15,6 +15,7 @@ import { Footer } from "./Footer";
 import iceland from "./img/iceland.jpg";
 import positano from "./img/positano.jpg";
 import vacation from "./img/vacation.jpg";
+import avatar from "./img/avatar.png"
 
 export const BlogPosts = () => {
   const [posts, setPosts] = React.useState(null);
@@ -79,10 +80,11 @@ export const BlogPosts = () => {
             </div>
           </div>
         </div>
-      </div>
-      {posts ? (
-        <div className="container">
+      </div>    
+      <div className="container">
         <div className="row justify-content-center mt-5">
+      {posts ? (
+    
           <div className="col-9 my-5">
             <div className="row"> 
               <span className="tag">Highlighted</span>
@@ -98,9 +100,10 @@ export const BlogPosts = () => {
 
                       <figcaption>
                         <h3>{post.title}</h3>
-                        <hr></hr>
-                        <p className="author">Author: Admin</p>
-                        <hr></hr>
+                        <hr className="snip-line"></hr>
+                        <div className="author"><img className="avatar me-3" src={avatar}/><p>Admin</p></div>
+             
+                        <hr className="snip-line"></hr>
                         <p>{post.description}</p>
                  
                       </figcaption>
@@ -112,8 +115,17 @@ export const BlogPosts = () => {
               </div>
             }
           </div>
-          <div className="col-2 ms-5 mt-5">
-            <h3 class="head1 ms-4">CATEGORIES</h3>
+      
+      ) : (
+        ""
+      )}   
+      
+       <div className="col-2 ms-5 mt-5">
+       <div className="row"> 
+              <span className="tag">News</span>
+              <hr className="tag-line"></hr>
+            </div>
+     
             <ul class="list">
               <li>
                 <a href="#">Suspendisse massa mi </a>
@@ -164,9 +176,6 @@ export const BlogPosts = () => {
           </div>
         </div>
         </div>
-      ) : (
-        ""
-      )}
       <Footer />
     </>
   );

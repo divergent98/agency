@@ -33,6 +33,8 @@ app.get("/", (req, res)=>{
    const postSchema = mongoose.Schema({
     title: String,
     description: String,
+    content: String,
+    category: String,
     image: String
   })
   const Post = mongoose.model("Post", postSchema);
@@ -71,6 +73,8 @@ app.post("/create", (req, res)=>{
     Post.create({
         title:req.body.title,
         description:req.body.description,
+        content: req.body.content,
+        category: req.body.category,
         image: req.body.image
     }).then(doc => console.log(doc))
     .catch(err=>console.log(err));
@@ -85,7 +89,10 @@ app.delete("/delete/:id", (req, res) => {
   Post.findByIdAndDelete({ _id: req.params.id },
     {
       title: req.body.title,
-      description: req.body.description
+      description: req.body.description,
+      content: req.body.content,
+      category: req.body.category,
+      image: req.body.image
     })
     .then(doc => console.log(doc))
     .catch((err) => console.log(err));
@@ -97,6 +104,8 @@ app.put("/update/:id", (req, res) => {
     {
       title: req.body.title,
       description: req.body.description,
+      content: req.body.content,
+      category: req.body.category,
       image: req.body.image
     }
   )

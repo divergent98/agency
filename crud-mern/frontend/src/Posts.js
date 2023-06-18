@@ -145,12 +145,15 @@ function Posts() {
         <>
           <div class="row">
             {posts.map((post) => {
+              
               return (
                 <div class="col-4">
                   {" "}
                   <div className="border m-4 p-4" key={post._id}>
                     <h4>{post.title}</h4>
+                    <p>Category: {post.category}</p>
                     <p>{post.description}</p>
+
                     <img src={post.image} className="postsImageAdmin"></img>
                     <div className="mt-5">
                       <Button className="me-5"
@@ -160,7 +163,7 @@ function Posts() {
                             post._id,
                             post.title,
                             post.description,
-                            post.category,
+                            post.content,
                             post.category,
                             post.image
                           )

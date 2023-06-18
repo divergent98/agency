@@ -15,7 +15,8 @@ import { Footer } from "./Footer";
 import iceland from "./img/iceland.jpg";
 import positano from "./img/positano.jpg";
 import vacation from "./img/vacation.jpg";
-import avatar from "./img/avatar.png"
+import avatar from "./img/avatar.png";
+import { Link } from "react-router-dom";
 
 export const BlogPosts = () => {
   const [posts, setPosts] = React.useState(null);
@@ -35,14 +36,14 @@ export const BlogPosts = () => {
           <div
             className="col-6 main-blog"
             style={{ backgroundImage: `url(${positano})` }}
-          >        <div className="title-space"> </div>
+          >
+            {" "}
+            <div className="title-space"> </div>
             <div className="title-style">
-      
               <hr></hr>
               <h2 className="text-light">
                 Positano: A Breathtaking Coastal Gem Awaiting Your Arrival
               </h2>
-             
             </div>
           </div>
 
@@ -55,11 +56,11 @@ export const BlogPosts = () => {
               <div className="title-space-small"> </div>
               <div className="title-style-small">
                 <div>
-                <hr></hr>
-                <h2 className="text-light font-24">
-                  Iceland Unveiled: A Journey into<br></br>  the Enchanting Land of Fire
-                  and Ice
-                </h2>
+                  <hr></hr>
+                  <h2 className="text-light font-24">
+                    Iceland Unveiled: A Journey into<br></br> the Enchanting
+                    Land of Fire and Ice
+                  </h2>
                 </div>
               </div>
             </div>
@@ -67,94 +68,93 @@ export const BlogPosts = () => {
               className="col-12 side-blog"
               style={{ backgroundImage: `url(${vacation})` }}
             >
-                <div className="title-space-small"> </div>
+              <div className="title-space-small"> </div>
               <div className="title-style-small">
                 <div>
-                <hr></hr>
-                <h2 className="text-light font-24">
-                  Paradise Beckons: 5 Essential Tips<br></br> for Your Tropical Travel
-                  Adventure
-                </h2>
+                  <hr></hr>
+                  <h2 className="text-light font-24">
+                    Paradise Beckons: 5 Essential Tips<br></br> for Your
+                    Tropical Travel Adventure
+                  </h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>    
+      </div>
       <div className="container">
         <div className="row justify-content-center mt-5">
-      {posts ? (
-    
-          <div className="col-9 my-5">
-            <div className="row"> 
-              <span className="tag">Highlighted</span>
-              <hr className="tag-line"></hr>
-            </div>
-            {
+          {posts ? (
+            <div className="col-8 my-5">
               <div className="row">
-                {posts.map((post) => {
-                  return (
-                    <div className="col-4">
-                    <figure class="snip background-color" key={post._id}>
-                      <img src={post.image} alt="sample85" />
-
-                      <figcaption>
-                        <h3>{post.title}</h3>
-                        <hr className="snip-line"></hr>
-                        <div className="author"><img className="avatar me-3" src={avatar}/><p>Admin</p></div>
-             
-                        <hr className="snip-line"></hr>
-                        <p>{post.description}</p>
-                 
-                      </figcaption>
-                      <a href="#"></a>
-                    </figure>
-                  </div>
-                  );
-                })}
+                <span className="tag">Highlighted</span>
+                <hr className="tag-line"></hr>
               </div>
-            }
-          </div>
-      
-      ) : (
-        ""
-      )}   
-      
-       <div className="col-2 ms-5 mt-5">
-       <div className="row"> 
+              {
+                <div className="row">
+                  {posts.map((post) => {
+                    if (post.category === "highlight") {
+                      return (
+                        <div className="col-4">
+                          <Link to={`/SinglePost/${post._id}/`}>
+                          <figure class="snip background-color" key={post._id}>
+                            <img src={post.image} alt="sample85" />
+
+                            <figcaption>
+                              <h3>{post.title}</h3>
+                              <hr className="snip-line"></hr>
+                              <div className="author">
+                                <img className="avatar me-3" src={avatar} />
+                                <p>Admin</p>
+                              </div>
+
+                              <hr className="snip-line"></hr>
+                              <p>{post.description}</p>
+                            </figcaption>
+
+                          </figure>
+                          </Link>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
+              }
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div className="col-3 ms-5 mt-5">
+            <div className="row">
               <span className="tag">News</span>
               <hr className="tag-line"></hr>
             </div>
-     
-            <ul class="list">
-              <li>
-                <a href="#">Suspendisse massa mi </a>
-              </li>
-              <li>
-                <a href="#">Porttitor at velit id </a>
-              </li>
-              <li>
-                <a href="#">Congue adipiscing </a>
-              </li>
-              <li>
-                <a href="#">Vestibulum vitae porta </a>
-              </li>
-              <li>
-                <a href="#">Vivamus ac sodales </a>
-              </li>
-              <li>
-                <a href="#">Massa quis adipiscing </a>
-              </li>
-              <li>
-                <a href="#">Phasellus hendrerit </a>
-              </li>
-              <li>
-                <a href="#">Libero in sapien </a>
-              </li>
-              <li>
-                <a href="#">Dignissim vel imperdiet </a>
-              </li>
-            </ul>
+            <div>
+              {posts
+                ? posts.map((post) => {
+                    if (post.category === "news") {
+                      return (
+                        <div className="row ms-2 news-post">
+                          <div className="col-4 news-post-image" style={{ backgroundImage: `url(${post.image})`}}>
+                           
+                          </div>
+                          <div className="col-8">
+                            <h3 className="font-18 blinker">{post.title}</h3>
+                            <div className="author">
+                              <img className="avatar me-3" src={avatar} />
+                              <p>Admin</p>
+                            </div>
+                          </div>
+
+                          <hr className="snip-line"></hr>
+                        </div>
+                      );
+                    }
+                  })
+                : ""}
+            </div>
+
             <h3 class="head1 ms-4">ARCHIVES</h3>
             <ul class="list">
               <li>
@@ -175,7 +175,7 @@ export const BlogPosts = () => {
             </ul>
           </div>
         </div>
-        </div>
+      </div>
       <Footer />
     </>
   );

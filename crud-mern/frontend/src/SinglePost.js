@@ -35,6 +35,7 @@ const SinglePost = () => {
             <div className="row">
                 <h2>{post.title}</h2>
                 <p>Autor: Admin</p>
+                <hr></hr>
                 <div className="blog-body" dangerouslySetInnerHTML={{__html: htmlString}} />
             </div>
           </div>

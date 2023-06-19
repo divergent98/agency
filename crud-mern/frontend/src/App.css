@@ -714,3 +714,14 @@ body {
   height: 300px;
 
 }
+.blog-body{
+  text-align: justify;
+}
+.blog-body h4{
+  font-family: 'Blinker';
+  text-transform: uppercase;
+  font-weight: bolder;
+  background: linear-gradient(315deg, var(--darkblue) 0%, var(--blue) 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

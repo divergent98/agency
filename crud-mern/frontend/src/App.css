@@ -745,3 +745,12 @@ body {
   color: var(--gray);
   font-weight: lighter;
 }
+.product-view{
+  margin-top: 50px;
+  min-height: 100vh;
+}
+.product-image{
+
+  height: 80vh;
+  background-size: cover;
+}

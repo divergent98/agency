@@ -22,20 +22,20 @@ const SingleProduct = () => {
   return (
     <section>
       <Navigation />
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-9">
-            <div
-              style={{ backgroundImage: `url(${product.image})` }}
-              className="single-blog-cover news-product-image"
-            ></div>
-            <div className="row">
-                <h2 className="product-title">{product.title}</h2>
+      <div className="container product-view">
+        <div className="row justify-content-center gt-5">
+          <div className="col-6 product-image"    style={{ backgroundImage: `url(${product.image})` }}
+            >
+          
+          
+            </div>
+            <div className="col-6">
+                <h2 className="product-title">{product.name}</h2>
                 <h2 className="product-title">{product.price}</h2>
                 <hr></hr>
                 <div className="product-body" dangerouslySetInnerHTML={{__html: htmlString}} />
             </div>
-          </div>
+          
         </div>
       </div>
       <Footer />

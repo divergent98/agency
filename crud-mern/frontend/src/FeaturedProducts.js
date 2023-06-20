@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { ListGroup, ListGroupItem, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export const FeaturedProducts  = () => {
     const [products, setProducts] = React.useState(null);
@@ -33,7 +34,8 @@ export const FeaturedProducts  = () => {
                      <a href="#" className='card-link'>
                     
                         <div class="content">
-                          <a href={product.image} target="_blank">
+                          <Link to={`/SingleProduct/${product._id}/`}>
+                            <div key={product._id}>
                             <div class="content-overlay"></div>
                             <img class="content-image" src={product.image} alt=""/>
                             <div class="content-details fadeIn-top">
@@ -41,8 +43,8 @@ export const FeaturedProducts  = () => {
                               <p className='roboto font-16'>{product.description}</p>
                               <p className='roboto font-18'>See offer</p>
                             </div>  
-                            
-                          </a>  
+                            </div>
+                          </Link>  
                       
                        <div className='visible-content'>
                             <h3 className='blinker'>{product.name}</h3>

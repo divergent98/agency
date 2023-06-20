@@ -14,6 +14,7 @@ import Products from './Products';
 import { BlogPosts } from './BlogPosts';
 import LoginForm from './LoginForm';
 import SinglePost from './SinglePost';
+import SingleProduct from './SingleProduct';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -25,7 +26,8 @@ root.render(
 <Route path="/create/posts" element={<Posts/>}/>
 <Route path="/create/product" element={<Products/>}/>
 <Route path="/BlogPosts" element={<BlogPosts/>}/>
-<Route path="/SinglePost/:productId" element={<SinglePost/>}/>
+<Route path="/SinglePost/:postId" element={<SinglePost/>}/>
+<Route path="/SingleProduct/:productId" element={<SingleProduct/>}/>
 <Route path="/Login" element={<LoginForm/>}/>
     </Routes>
     </BrowserRouter>

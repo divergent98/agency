@@ -725,3 +725,23 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.blog-title{
+  margin-top: 30px !important;
+  margin-top: 30px !important;
+  background: linear-gradient(315deg, var(--darkblue) 0%, var(--blue) 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Blinker';
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 50px;
+  line-height: 45px;
+}
+.blog-author,
+.blog-body p{
+  font-family: 'Roboto Condensed';
+  font-size: 19px;
+  color: var(--gray);
+  font-weight: lighter;
+}

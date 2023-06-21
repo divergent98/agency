@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
+import check from "./img/check-mark.png";
+import calendar from "./img/calendar.png";
 const SingleProduct = () => {
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
@@ -16,24 +18,40 @@ const SingleProduct = () => {
   console.log(products);
   console.log(productId);
   const product = products.find((product) => product._id === productId);
-  	const htmlString = product.description;
-
-
+  	const string = product.description;
+    let items= string.split(',');
   return (
     <section>
       <Navigation />
+      <div className="banner"></div>
       <div className="container product-view">
-        <div className="row justify-content-center gt-5">
-          <div className="col-6 product-image"    style={{ backgroundImage: `url(${product.image})` }}
+        <div className="row justify-content-center gx-5">
+          <div className="col-5 me-5 product-image"    style={{ backgroundImage: `url(${product.image})` }}
             >
           
           
             </div>
             <div className="col-6">
                 <h2 className="product-title">{product.name}</h2>
-                <h2 className="product-title">{product.price}</h2>
+                <h2 className="product-price">$ {product.price}</h2>
                 <hr></hr>
-                <div className="product-body" dangerouslySetInnerHTML={{__html: htmlString}} />
+                <div className="product-body">
+                  <div className="my-3 border border-1 w-50 p-2">
+                <img className="calendar" src={calendar}/><span className="product-item">25/7/2023</span>
+                </div>
+                  <ul>
+                  {items.map( item =>(
+                        <li className="ps-2"><img src={check}/><span className="product-item ">{item}</span></li>
+                        )
+                    )}
+                  </ul>
+                  <div>
+             <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3 product-button">
+            Book now
+          </Link>
+                  
+                  </div>
+                </div>
             </div>
           
         </div>

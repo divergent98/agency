@@ -17,24 +17,21 @@ const SinglePost = () => {
   console.log(postId);
   const post = posts.find((post) => post._id === postId);
   	const htmlString = post.content;
-
-
-
-  
-
   return (
     <section>
       <Navigation />
+      <div className="banner"></div>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-9">
+          <div className="col-9">  
+          <h2 className="blog-title mb-5">{post.title}</h2>
             <div
               style={{ backgroundImage: `url(${post.image})` }}
               className="single-blog-cover news-post-image"
             ></div>
             <div className="row">
-                <h2 className="blog-title">{post.title}</h2>
-                <p className="blog-author">Autor: Admin</p>
+              
+                <p className="blog-author mt-5">Autor: Admin</p>
                 <hr></hr>
                 <div className="blog-body" dangerouslySetInnerHTML={{__html: htmlString}} />
             </div>

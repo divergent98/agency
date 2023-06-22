@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
+import moment from "moment";
 import check from "./img/check-mark.png";
 import calendar from "./img/calendar.png";
 const SingleProduct = () => {
@@ -20,6 +21,7 @@ const SingleProduct = () => {
   const product = products.find((product) => product._id === productId);
   	const string = product.description;
     let items= string.split(',');
+    const formattedDate = moment(product.date).format('DD-MM-YYYY')
   return (
     <section>
       <Navigation />
@@ -37,7 +39,7 @@ const SingleProduct = () => {
                 <hr></hr>
                 <div className="product-body">
                   <div className="my-3 border border-1 w-50 p-2">
-                <img className="calendar" src={calendar}/><span className="product-item">25/7/2023</span>
+                <img className="calendar" src={calendar}/><span className="product-item">{formattedDate}</span>
                 </div>
                   <ul>
                   {items.map( item =>(
@@ -46,7 +48,7 @@ const SingleProduct = () => {
                     )}
                   </ul>
                   <div>
-             <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3 product-button">
+             <Link class="btn custom-button save-changes-button big-btn text-light border-0 rounded-0 my-5 py-3 ">
             Book now
           </Link>
                   

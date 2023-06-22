@@ -63,6 +63,7 @@ function CreatePost() {
             name="content"
             value={post.content}
             placeholder="content"
+            as="textarea" rows={10} 
             onChange={handleChange}
           />
               <Form.Label>Category</Form.Label>

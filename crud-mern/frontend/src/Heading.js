@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import logo from './img/logo.png';
 
 import{
     Collapse,
@@ -35,18 +36,21 @@ export const Heading = () => {
           </Nav>
         </Collapse>
       </Navbar> 
-    <Navbar className=" navigation-admin hidden-small-screen" >
+    <Navbar className=" navigation-admin hidden-small-screen " >
         <Container className='row '>
             <div className='col-4'>
-            <NavbarBrand className="text-light" href="/">My trip</NavbarBrand>
+            <NavbarBrand className="text-light" href="/">   <img src={logo} alt="logo" className="logo logo-admin"/></NavbarBrand>
             </div>
             <div className='col-8'>
                 <Nav  className="align-items-left">
                     <NavItem>
-                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/product">Add Products </Link>
+                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/product"><span className='custom-link'>Products </span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/posts">Add Post </Link>
+                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/posts"><span className='custom-link'>Posts</span></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/posts"><span className='custom-link'>View offers</span></Link>
                     </NavItem>
                 </Nav>
             </div>

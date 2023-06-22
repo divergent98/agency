@@ -18,6 +18,9 @@ body {
 .logo {
   height: 60px !important;
 }
+.logo {
+  height: 40px !important;
+}
 .img {
   width: 100%;
   height: 650px !important;
@@ -503,7 +506,7 @@ body {
 
 .navigation-admin {
   z-index: 1000;
-  background-color: #352430;
+  background-color: #1b1b1b;
 }
 
 .custom-carousel {
@@ -597,7 +600,7 @@ body {
 
 .postsImageAdmin {
   height: 300px;
-  width: 450px;
+  width: 100%;
 }
 
 .spacer {
@@ -782,4 +785,25 @@ body {
 }
 .product-button{
   width: 40%;
+}
+
+.edit-button{
+  background: rgb(12,110,69);
+
+  background: linear-gradient(143deg, rgb(12,110,69)  38%, rgb(103,244,192) 100%);
+  width: 80px;
+}
+.edit-button:hover{
+  background: linear-gradient(143deg, rgb(103,244,192) 38%, rgb(12,110,69) 100%);
+}
+.delete-button{
+  background: rgb(242,232,236);
+  background: linear-gradient(143deg,rgb(204,61,177)38%,  rgb(229,177,142)  100%);
+width: 80px;
+}
+.delete-button:hover{
+  background: linear-gradient(143deg, rgb(229,177,142) 38%,rgb(204,61,177) 100%);
+}
+.save-changes-button{
+  width: 130px;
 }

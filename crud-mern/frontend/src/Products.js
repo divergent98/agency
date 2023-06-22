@@ -12,10 +12,12 @@ function Products() {
   const [updatedProduct, setUpdatedProduct] = useState({
     name: "",
     description: "",
+    description2: "",
+    date: "",
     image: "",
     price: 0,
     category: "",
-    isFeatured: false,
+
   });
   const [show, setShow] = useState(false);
 
@@ -25,10 +27,12 @@ function Products() {
     id,
     name,
     description,
+    description2,
+    date,
     image,
     price,
-    category,
-    isFeatured
+    category
+    
   ) => {
     setUpdatedProduct((prev) => {
       return {
@@ -36,10 +40,12 @@ function Products() {
         id: id,
         name: name,
         description: description,
+        description2: description2,
+        date: date,
         image: image,
         price: price,
         category: category,
-        isFeatured: isFeatured,
+
       };
     });
     handleShow();
@@ -88,20 +94,21 @@ function Products() {
   return (
     <div>
       <Heading />
+      <div className="container">
       <div className="row mt-5">
-        <div className="col-10 ps-5">
-          <h1 className="ps-2">Products page</h1>
+        <div className="col-10">
+          <h1 className="gradient-headline ">Products page</h1>
         </div>
-        <div className="col-2">
-          <Button variant="secondary" onClick={() => navigate("/createProduct")}>
-            New Product
+        <div className="col-2 align-right">
+          <Button className="custom-button rounded-0 roboto" onClick={() => navigate("/createProduct")}>
+           New Product
           </Button>
         </div>
       </div>
-
-      <Modal show={show} onHide={handleClose}>
+</div>
+      <Modal className="roboto" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update a product</Modal.Title>
+          <Modal.Title  className="blinker"> Update a product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Label>Name</Form.Label>
@@ -117,15 +124,32 @@ function Products() {
             placeholder="description"
             name="description"
             onChange={handleChange}
+            style={{ marginBottom: "1rem" }}
             value={updatedProduct.description ? updatedProduct.description : ""}
+          />
+          <Form.Label>Description 2</Form.Label>
+          <Form.Control
+            placeholder="description2"
+            name="description2"
+            onChange={handleChange}
+            style={{ marginBottom: "1rem" }}
+            value={updatedProduct.description2 ? updatedProduct.description2 : ""}
+          />
+             <Form.Label>Date</Form.Label>
+          <Form.Control
+            placeholder="description2"
+            name="description2"
+            onChange={handleChange}
+            style={{ marginBottom: "1rem" }}
+            value={updatedProduct.description2 ? updatedProduct.description2 : ""}
           />
           <Form.Label>Image</Form.Label>
           <Form.Control
             placeholder="image"
             name="image"
             value={updatedProduct.image ? updatedProduct.image : ""}
-            style={{ marginBottom: "1rem" }}
             onChange={handleChange}
+            style={{ marginBottom: "1rem" }}
           />
           <Form.Label>Price</Form.Label>
           <Form.Control
@@ -133,6 +157,7 @@ function Products() {
             name="price"
             onChange={handleChange}
             value={updatedProduct.price ? updatedProduct.price : ""}
+            style={{ marginBottom: "1rem" }}
           />
           <Form.Label>Category</Form.Label>
           <Form.Control
@@ -140,65 +165,58 @@ function Products() {
             name="category"
             onChange={handleChange}
             value={updatedProduct.category ? updatedProduct.category : ""}
+            style={{ marginBottom: "1rem" }}
           />
-          <Form.Label>Is featured</Form.Label>
-          <Form.Control
-            placeholder="Is Featured"
-            name="isFeatured"
-            onChange={handleChange}
-            value={updatedProduct.isFeatured ? updatedProduct.isFeatured : ""}
-          />
+ 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="link" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="secondary" onClick={saveUpdatedProduct}>
+      
+          <Button className="edit-button save-changes-button btn text-light border-0 rounded-0 m-2" onClick={saveUpdatedProduct}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
       {products ? (
         <>
-          <div className="mt-5">
-            <div className="row  border mx-5 py-3">
-              <div className="col-2">Product</div>
-              <div className="col-5">Description</div>
-              <div className="col-1">Price</div>
-              <div className="col-1">Category</div>
-              <div className="col-1">Is Featured</div>
-            </div>
+            <div className="container">
+            <div className="row mt-5 ms-1 me-5">
+      <table className="table table-striped table-hover table-bordered">
+        <thead>
+          <tr className="blinker font-18">
+            <th>Product</th>
+            <th>Description</th>
+            <th>Description2</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
             {products.map((product) => {
               return (
-                <div className="row border mx-5" key={product._id}>
-                  <div className="col-2">
-                    <h4>{product.name}</h4>
-                  </div>
-                  <div className="col-5">
-                    <p>{product.description}</p>
-                  </div>
-                  <div className="col-1">
-                    <p>{product.price}</p>
-                  </div>
-                  <div className="col-1">
-                    <p>{product.category}</p>
-                  </div>
-                  <div className="col-1">
-                    <p>{product.isFeatured}</p>
-                  </div>
-                  <div className="col-2">
-                    <Button
-                    variant="secondary"
-                      className="m-2"
+                <tr className="roboto font-18" key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>{product.description2}</td>
+                <td>{product.date}</td>
+                <td>{product.price}</td>
+                <td>{product.category}</td>
+                <td>
+                <Button
+                    
+                      className="edit-button custom-button btn text-light border-0 rounded-0 m-2"
                       onClick={() =>
                         updateProduct(
                           product._id,
                           product.name,
                           product.description,
+                          product.description2,
+                          product.date,
                           product.image,
                           product.price,
                           product.category,
-                          product.isFeatured
+          
                         )
                       }
                     >
@@ -206,16 +224,20 @@ function Products() {
                     </Button>
                     <Button
                     variant="secondary"
-                      className="m-2"
+                    className="delete-button custom-button btn text-light border-0 rounded-0 m-2"
                       onClick={() => deleteProduct(product._id)}
                     >
                       Delete
                     </Button>
-                  </div>
-                </div>
+                </td>
+              </tr>
+           
               );
             })}
-          </div>
+          </tbody>
+      </table>
+            </div>
+            </div>
         </>
       ) : (
         ""

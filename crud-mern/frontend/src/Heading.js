@@ -50,7 +50,7 @@ export const Heading = () => {
                         <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/posts"><span className='custom-link'>Posts</span></Link>
                     </NavItem>
                     <NavItem>
-                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/create/posts"><span className='custom-link'>View offers</span></Link>
+                        <Link className='btn custom-btn btn-8 mx-3 text-light' to="/createReservation"><span className='custom-link'>View offers</span></Link>
                     </NavItem>
                 </Nav>
             </div>

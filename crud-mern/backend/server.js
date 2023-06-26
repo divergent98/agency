@@ -106,7 +106,7 @@ const reservationSchema = mongoose.Schema({
     required: true,
   },
 });
-const Resevation = mongoose.model("Reservation", reservationSchema);
+const Reservation = mongoose.model("Reservation", reservationSchema);
 // --------------------------------------------------------------------------------------Post
 app.post("/create", (req, res) => {
   Post.create({
@@ -213,7 +213,6 @@ app.post("/createReservation", (req, res) => {
   Reservation.create({
     name: req.body.name,
     lastname: req.body.lastname,
-    description2: req.body.description2,
     phone: req.body.phone,
     email: req.body.email,
     destination: req.body.destination,
@@ -224,8 +223,8 @@ app.post("/createReservation", (req, res) => {
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
 });
-app.get("/reservations", (req, res) => {
-  Resevation.find()
+app.get("/reservation", (req, res) => {
+  Resevations.find()
     .then((items) => res.json(items))
     .catch((err) => console.log(err));
 });
@@ -236,7 +235,6 @@ app.delete("/deleteReservation/:id", (req, res) => {
     {
       name: req.body.name,
       lastname: req.body.lastname,
-      description2: req.body.description2,
       phone: req.body.phone,
       email: req.body.email,
       destination: req.body.destination,

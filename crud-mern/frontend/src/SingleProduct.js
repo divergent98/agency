@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { Button, Form } from "react-bootstrap";
+import { Modal, Button,  ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {Form } from "react-bootstrap";
 import axios from "axios";
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
@@ -11,10 +11,43 @@ import check from "./img/check-mark.png";
 import calendar from "./img/calendar.png";
 import cancel from "./img/cancel.png";
 const SingleProduct = () => {
+  const [reservation, setReservation] = useState({
+    name: "",
+    lastname: "",
+    phone: "",
+    email: "",
+    destination: "",
+    cardno: "",
+    carddate: "",
+    cvc: ""
+  });
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    axios.post("/createReservation", reservation)
+    .then((res) =>console.log(res))
+    .catch((err) =>console.log(err));
+   
+    toggleRegistration()
+
+  }
+  const handleChange = (event) => {
+    console.log(event.target);
+    const {name, value} = event.target;
+    setReservation(prev =>{
+        return{
+            ...prev,
+            [name]: value,
+        };
+    });
+  };
+
+  
+  
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
-  const [modalPayment, setModalPayment] = useState(false);
-  const togglePayment = () => setModalPayment(!modalPayment);
+  const [modalRegistration, setModalRegistration] = useState(false);
+  const toggleRegistration = () => setModalRegistration(!modalRegistration);
   React.useEffect(() => {
     axios.get("/products").then((response) => {
       setProducts(response.data);
@@ -27,22 +60,28 @@ const SingleProduct = () => {
   	const string = product.description;
     let items= string.split(', ');
     const formattedDate = moment(product.date).format('DD-MM-YYYY')
+
+
+
+
+
+
   return (
     <section>
-              <div className="col-4 px-5" onClick={togglePayment}>
+              <div className="col-4 px-5" onClick={toggleRegistration}>
           
           </div>
       <Navigation />
       <div className="banner"></div>
       <Modal
         className="mt-5 modal-lg modal-dialog modal-dialog-centered"
-        isOpen={modalPayment}
-        toggle={togglePayment}
+        isOpen={modalRegistration}
+        toggle={toggleRegistration}
       >
-        <ModalBody toggle={togglePayment} className="">
+        <ModalBody toggle={toggleRegistration} className="">
           <div className="row justify-content-end">
             <div className="col-1">
-              <Button color="transparent " onClick={togglePayment}>
+              <Button color="transparent" onClick={toggleRegistration}>
                 <img src={cancel}></img>
               </Button>
             </div>
@@ -63,33 +102,54 @@ const SingleProduct = () => {
       <Form.Group> 
         <Form.Control
         name="name"
-        value={product.name}
+        value={reservation.name}
         placeholder="name"
-
+        onChange={handleChange}
       />
        <Form.Label>Last name</Form.Label>   
        <Form.Control
           name="lastname"
-          value={product.lastname}
+          value={reservation.lastname}
           placeholder="lastname"
-
+          onChange={handleChange}
         />
           <Form.Label>Phone</Form.Label>   
        <Form.Control
           name="phone"
-          value={product.phone}
+          value={reservation.phone}
           placeholder="phone"
-
+          onChange={handleChange}
         />
                <Form.Label>Email</Form.Label>   
            <Form.Control
           name="email"
-          value={product.email}
+          value={reservation.email}
           placeholder="email"
-
+          onChange={handleChange}
+        />
+                 <Form.Label>Card number</Form.Label>   
+           <Form.Control
+          name="cardnumber"
+          value={reservation.cardnumber}
+          placeholder="cardnumber"
+          onChange={handleChange}
+        />
+                 <Form.Label>Expiration date</Form.Label>   
+           <Form.Control
+          name="cardno"
+          value={reservation.cardno}
+          placeholder="cardno"
+          onChange={handleChange}
+        />
+                    <Form.Label>CVC</Form.Label>   
+           <Form.Control
+          name="cvc"
+          value={reservation.cvc}
+          placeholder="cvc"
+          onChange={handleChange}
         />
       </Form.Group>
-      <Button  variant="secondary" className="mt-5">Add Product</Button>
+      <Button  variant="secondary" className="mt-5" onClick={handleClick}>Add Product</Button>
     </Form>
             </div>
           </div>
@@ -117,7 +177,7 @@ const SingleProduct = () => {
                     )}
                   </ul>
                   <div>
-             <Link class="btn custom-button save-changes-button big-btn text-light border-0 rounded-0 pt-3 pb-5 mt-5" onClick={togglePayment}>
+             <Link class="btn custom-button save-changes-button big-btn text-light border-0 rounded-0 pt-3 pb-5 mt-5" onClick={toggleRegistration}>
             Book now
           </Link>
                   

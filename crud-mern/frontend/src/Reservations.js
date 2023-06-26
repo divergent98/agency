@@ -7,9 +7,9 @@ import { Heading } from "./Heading";
 
 function Reservations() {
   const navigate = useNavigate();
-  const [reservations, setReservations] = useState([]);
+  const [reservation, setReservations] = useState([]);
 
-/*   const [updatedReservation, setUpdatedReservation] = useState({
+   const [updatedReservation, setUpdatedReservation] = useState({
     name: "",
     lastname: "",
     phone: "",
@@ -20,7 +20,7 @@ function Reservations() {
     carddate: "",
     cvc:""
 
-  }); */
+  }); 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -80,7 +80,7 @@ function Reservations() {
   }; */
   useEffect(() => {
     axios
-      .get("/reservations")
+      .get("/reservation")
       .then((res) => {
         console.log(res.data);
         setReservations(res.data);
@@ -109,7 +109,7 @@ function Reservations() {
       </div>
 </div>
 
-      {reservations ? (
+      {reservation ? (
         <>
             <div className="container">
             <div className="row mt-5 ms-1 me-5">
@@ -126,7 +126,7 @@ function Reservations() {
           </tr>
         </thead>
         <tbody>
-            {reservations.map((reservation) => {
+            {reservation.map((reservation) => {
               return (
                 <tr className="roboto font-18" key={reservation._id}>
                 <td>{reservation.name}</td>

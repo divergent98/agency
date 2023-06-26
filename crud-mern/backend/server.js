@@ -224,7 +224,7 @@ app.post("/createReservation", (req, res) => {
     .catch((err) => console.log(err));
 });
 app.get("/reservation", (req, res) => {
-  Resevations.find()
+  Reservation.find()
     .then((items) => res.json(items))
     .catch((err) => console.log(err));
 });

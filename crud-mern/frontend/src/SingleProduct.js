@@ -61,6 +61,7 @@ const SingleProduct = () => {
     let items= string.split(', ');
     const formattedDate = moment(product.date).format('DD-MM-YYYY')
 
+    reservation.destination = product.name;
 
 
 
@@ -129,16 +130,16 @@ const SingleProduct = () => {
         />
                  <Form.Label>Card number</Form.Label>   
            <Form.Control
-          name="cardnumber"
-          value={reservation.cardnumber}
+          name="cardno"
+          value={reservation.cardno}
           placeholder="cardnumber"
           onChange={handleChange}
         />
                  <Form.Label>Expiration date</Form.Label>   
            <Form.Control
-          name="cardno"
-          value={reservation.cardno}
-          placeholder="cardno"
+          name="carddate"
+          value={reservation.carddate}
+          placeholder="carddate"
           onChange={handleChange}
         />
                     <Form.Label>CVC</Form.Label>   

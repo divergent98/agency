@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Heading } from "./Heading";
 
-function Reservations() {
+function Reservation() {
   const navigate = useNavigate();
-  const [reservation, setReservations] = useState([]);
+  const [reservations, setReservation] = useState([]);
 
    const [updatedReservation, setUpdatedReservation] = useState({
     name: "",
@@ -25,7 +25,7 @@ function Reservations() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
- /*  const updateReservation = (
+  const updateReservation = (
     id,
     name,
     lastname,
@@ -77,20 +77,20 @@ function Reservations() {
 
     handleClose();
     //window.location.reload();
-  }; */
+  }; 
   useEffect(() => {
     axios
       .get("/reservation")
       .then((res) => {
         console.log(res.data);
-        setReservations(res.data);
+        setReservation(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
   const deleteReservation = (id) => {
     console.log(id);
     axios
-      .delete(`/deleteReservaton/${id}`)
+      .delete(`/deleteReservation/${id}`)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
 
@@ -103,13 +103,13 @@ function Reservations() {
       <div className="container">
       <div className="row mt-5">
         <div className="col-12">
-          <h1 className="gradient-headline ">Reservations</h1>
+          <h1 className="gradient-headline ">Reservation</h1>
         </div>
       
       </div>
 </div>
 
-      {reservation ? (
+      { reservations ? (
         <>
             <div className="container">
             <div className="row mt-5 ms-1 me-5">
@@ -126,7 +126,7 @@ function Reservations() {
           </tr>
         </thead>
         <tbody>
-            {reservation.map((reservation) => {
+            {reservations.map((reservation) => {
               return (
                 <tr className="roboto font-18" key={reservation._id}>
                 <td>{reservation.name}</td>
@@ -179,4 +179,4 @@ function Reservations() {
   );
 }
 
-export default Reservations;
+export default Reservation;

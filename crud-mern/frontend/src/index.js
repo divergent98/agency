@@ -15,7 +15,7 @@ import { BlogPosts } from './BlogPosts';
 import LoginForm from './LoginForm';
 import SinglePost from './SinglePost';
 import SingleProduct from './SingleProduct';
-import Reservations from './Reservations';
+import Reservation from './Reservation';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -24,7 +24,7 @@ root.render(
 <Route path="/" element={<App/>}/>
 <Route path="/create" element={<CreatePost/>}/>
 <Route path="/createProduct" element={<AddProducts/>}/>
-<Route path="/createReservation" element={<Reservations/>}/>
+<Route path="/createReservation" element={<Reservation/>}/>
 <Route path="/create/posts" element={<Posts/>}/>
 <Route path="/create/product" element={<Products/>}/>
 <Route path="/BlogPosts" element={<BlogPosts/>}/>

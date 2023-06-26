@@ -3,15 +3,19 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import  axios from "axios";
 import { Heading } from "./Heading";
+import moment from "moment";
+
 function CreateProduct() {
   const navigate = useNavigate();
   const [product, setProduct] = useState({
     name:"",
     description:"",
+    description2:"",
+    date: moment().format('DD-MM-YYYY'),
     image:"",
     price:0,
     category:"",
-    isFeatred: "",
+
   });
   const handleChange = (event) => {
     console.log(event.target);
@@ -59,6 +63,21 @@ function CreateProduct() {
           placeholder="description"
           onChange={handleChange}
         />
+          <Form.Label>Description 2</Form.Label>   
+       <Form.Control
+          name="description2"
+          value={product.description2}
+          placeholder="description 2"
+          onChange={handleChange}
+        />
+                <Form.Label>Date</Form.Label>   
+       <Form.Control
+          name="date"
+          value={product.date}
+          placeholder="date"
+          type="date"
+          onChange={handleChange}
+        />
         <Form.Label>Image</Form.Label>
         <Form.Control
           name="image"
@@ -80,13 +99,7 @@ function CreateProduct() {
           placeholder="category"
           onChange={handleChange}
         />
-        <Form.Label>Is featured</Form.Label>
-       <Form.Control
-          name="isFeatured"
-          value={product.isFeatred}
-          placeholder="isFeatured"
-          onChange={handleChange}
-        />
+     
       </Form.Group>
       <Button onClick={handleClick} variant="secondary" className="mt-5">Add Product</Button>
     </Form>

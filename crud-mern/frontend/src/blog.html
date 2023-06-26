@@ -1,33 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Animation</title>
+  <style>
+    .animated-element {
+      position: relative;
+      opacity: 0;
+      animation: slideInFromBottom 1s ease-out forwards;
+    }
 
-<p> Nestled on the eastern coast of Sicily, Catania is a true gem waiting to be discovered. This vibrant city, with its
-    rich history, stunning architecture, and breathtaking natural beauty, will captivate your heart from the moment you
-    arrive. </p>
-<h4>1. A Living History</h4>
-<p> Catania is steeped in history, and everywhere you turn, you'll find traces of its past. Explore the city's historic
-    center, a UNESCO World Heritage Site, and marvel at the baroque architecture that dominates the streets. Admire the
-    majestic Catania Cathedral, visit the ancient Roman amphitheater, and wander through the bustling fish market, La
-    Pescheria. Each step reveals a piece of Catania's captivating history. </p>
-<h4>2. Magnificent Mount Etna</h4>
-<p> Rising majestically on the outskirts of Catania, Mount Etna is Europe's most active volcano and a sight not to be
-    missed. Embark on an unforgettable adventure and hike up the volcanic slopes, or take a guided tour to explore its
-    lunar landscapes and volcanic craters. The views from the summit are truly awe-inspiring, offering a breathtaking
-    panorama of Sicily and the surrounding coastline. </p>
-<h4>3. Gastronomic Delights</h4>
-<p> Catania is a food lover's paradise, offering a tantalizing array of traditional Sicilian cuisine. Indulge in
-    arancini, fried rice balls filled with ragù or cheese, savor freshly caught seafood dishes, and delight in the
-    famous Sicilian desserts like cannoli and granita. Don't forget to pair your meals with a glass of local wine, such
-    as the renowned Etna Rosso. Catania's culinary scene will leave you craving for more. </p>
-<h4>4. Vibrant Street Life</h4>
-<p> Catania is a city that comes alive on its streets. Explore the bustling Via Etnea, the main thoroughfare lined with
-    shops, cafes, and historic buildings. Immerse yourself in the lively atmosphere of Piazza del Duomo, the city's
-    central square, and watch the world go by as you sip on a refreshing Aperol Spritz. Catania's vibrant street life is
-    a true reflection of the city's energetic spirit. </p>
-<h4>5. Coastal Beauty</h4>
-<p> Just a short distance from the city center, Catania offers stunning coastal scenery. Relax on the golden sandy
-    beaches of Playa Catania or explore the dramatic Cyclops Riviera, named after the mythical Cyclops from Homer's
-    Odyssey. Take a leisurely stroll along the picturesque coastal promenade and let the mesmerizing blue hues of the
-    Ionian Sea enchant you. </p>
-<p> In conclusion, Catania is a city that effortlessly combines history, natural beauty, and vibrant culture. Whether
-    you're exploring its ancient ruins, hiking the slopes of Mount Etna, indulging in delicious Sicilian cuisine, or
-    simply soaking up the city's lively atmosphere, Catania is sure to leave a lasting impression. Visit this enchanting
-    jewel of Sicily and let its charm captivate your senses. </p>
+    .animated-element.delay-1 {
+      animation-delay: 1s;
+    }
+
+    .animated-element.delay-2 {
+      animation-delay: 2s;
+    }
+
+    .animated-element.delay-3 {
+      animation-delay: 3s;
+    }
+
+    @keyframes slideInFromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-element">
+    <!-- Content for the first element -->
+    <h1>Welcome to My Website</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="animated-element delay-1">
+    <!-- Content for the second element -->
+    <h2>Discover Amazing Features</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="animated-element delay-2">
+    <!-- Content for the third element -->
+    <h3>Experience the Beauty</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="animated-element delay-3">
+    <!-- Content for the fourth element -->
+    <h4>Join Us Today</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+</body>
+</html>

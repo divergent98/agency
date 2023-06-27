@@ -840,20 +840,7 @@ width: 80px;
 
 
 /* CREDIT CARD IMAGE STYLING */
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
 
-.container {
-  width: 100%;
-  max-width: 400px;
-  max-height: 251px;
-  height: 54vw;
-  padding: 20px;
-}
 
 #ccsingle {
   position: absolute;

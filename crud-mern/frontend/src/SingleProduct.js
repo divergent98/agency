@@ -7,7 +7,7 @@ import axios from "axios";
 
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
-import moment from "moment";
+import moment, { months } from "moment";
 import check from "./img/check-mark.png";
 import calendar from "./img/calendar.png";
 import cancel from "./img/cancel.png";
@@ -52,7 +52,7 @@ const SingleProduct = () => {
     });
   };
 
-  const copyText = (currentField, nextField)=>{
+  const copyText = (currentField, nextField) => {
     const cardno_1 = document.querySelector("#cardno-1").value;
     const cardno_2 = document.querySelector("#cardno-2").value;
     const cardno_3 = document.querySelector("#cardno-3").value;
@@ -66,16 +66,14 @@ const SingleProduct = () => {
     const nextInput = document.getElementById(nextField);
 
     if (currentInput.value.length === currentInput.maxLength) {
-        nextInput.focus();
+      nextInput.focus();
     }
-  }
-  const copyName = ()=>{
+  };
+  const copyName = () => {
     const cardName = document.querySelector("#cardname").value;
 
     document.getElementById("cardname-copy").textContent = cardName;
- 
-  
-  }
+  };
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
   const [modalRegistration, setModalRegistration] = useState(false);
@@ -148,14 +146,13 @@ const SingleProduct = () => {
                             d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z"
                           />
                         </g>
-                        
+
                         <text
                           transform="matrix(1 0 0 1 60 295.0121)"
                           id="cardno-copy-1"
                           class="st2 st3 st4"
                         >
                           0000
-                        
                         </text>
                         <text
                           transform="matrix(1 0 0 1 200 295.0121)"
@@ -163,7 +160,6 @@ const SingleProduct = () => {
                           class="st2 st3 st4"
                         >
                           0000
-                        
                         </text>
                         <text
                           transform="matrix(1 0 0 1 340 295.0121)"
@@ -171,7 +167,6 @@ const SingleProduct = () => {
                           class="st2 st3 st4"
                         >
                           0000
-                        
                         </text>
 
                         <text
@@ -180,7 +175,6 @@ const SingleProduct = () => {
                           class="st2 st3 st4"
                         >
                           0000
-                        
                         </text>
                         <text
                           transform="matrix(1 0 0 1 54.1064 428.1723)"
@@ -465,7 +459,7 @@ const SingleProduct = () => {
                       <Form.Label>Card name</Form.Label>
                       <Form.Control
                         name="cardname"
-                        id="cardname"  
+                        id="cardname"
                         placeholder="cardname"
                         onChange={handleChange}
                         onKeyUp={copyName}
@@ -474,45 +468,38 @@ const SingleProduct = () => {
                     <div className="col-12">
                       <Form.Label>Card number</Form.Label>
                       <div className="row">
-                  
-
-                          <div className="col-3" >
+                        <div className="col-3">
                           <Form.Control
-                        maxLength={4}
-                        id="cardno-1"   
-                        onKeyUp={() => copyText('cardno-1', 'cardno-2')}
-                        onChange={handleChange}
-                      />
-                          
-                          </div>
-                          <div className="col-3" >
+                            maxLength={4}
+                            id="cardno-1"
+                            onKeyUp={() => copyText("cardno-1", "cardno-2")}
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="col-3">
                           <Form.Control
-                        maxLength={4}
-                        id="cardno-2"   
-                        onKeyUp={() => copyText('cardno-2', 'cardno-3')}
-                        onChange={handleChange}
-                      />
-                          
-                          </div>
-                          <div className="col-3" >
+                            maxLength={4}
+                            id="cardno-2"
+                            onKeyUp={() => copyText("cardno-2", "cardno-3")}
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="col-3">
                           <Form.Control
-                        maxLength={4}
-                        id="cardno-3"   
-                        onKeyUp={() => copyText('cardno-3', 'cardno-4')}
-                        onChange={handleChange}
-                      />
-                          
-                          </div>
-                          <div className="col-3" >
+                            maxLength={4}
+                            id="cardno-3"
+                            onKeyUp={() => copyText("cardno-3", "cardno-4")}
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="col-3">
                           <Form.Control
-                        maxLength={4}
-                        id="cardno-4"   
-                        onKeyUp={() => copyText('cardno-4', 'expdate')}
-                        onChange={handleChange}
-                      />
-                          
-                          </div>
-                       
+                            maxLength={4}
+                            id="cardno-4"
+                            onKeyUp={() => copyText("cardno-4", "expdate")}
+                            onChange={handleChange}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -520,14 +507,39 @@ const SingleProduct = () => {
                     <div className="col-6">
                       {" "}
                       <Form.Label>Expiration date</Form.Label>
-                      <Form.Control
-                        name="carddate"
-                        value={reservation.carddate}
-                        placeholder="carddate"
-                        id="expdate"
-                        onChange={handleChange}
-                      />
+                      <div className="row">
+                        <div className="col-6">
+                        <Form.Select >
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                          </Form.Select>
+                        </div>
+                        <div className="col-6">
+                      
+                          <Form.Select >
+                            <option value="23">2023</option>
+                            <option value="24">2024</option>
+                            <option value="25">2025</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                            <option value="30">2030</option>
+                          </Form.Select>
                     </div>
+                        </div>
+                      </div>
+      
                     <div className="col-6">
                       <Form.Label>CVC</Form.Label>
                       <Form.Control

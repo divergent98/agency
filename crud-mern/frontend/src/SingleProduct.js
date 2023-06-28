@@ -52,6 +52,30 @@ const SingleProduct = () => {
     });
   };
 
+  const copyText = (currentField, nextField)=>{
+    const cardno_1 = document.querySelector("#cardno-1").value;
+    const cardno_2 = document.querySelector("#cardno-2").value;
+    const cardno_3 = document.querySelector("#cardno-3").value;
+    const cardno_4 = document.querySelector("#cardno-4").value;
+
+    document.getElementById("cardno-copy-1").textContent = cardno_1;
+    document.getElementById("cardno-copy-2").textContent = cardno_2;
+    document.getElementById("cardno-copy-3").textContent = cardno_3;
+    document.getElementById("cardno-copy-4").textContent = cardno_4;
+    const currentInput = document.getElementById(currentField);
+    const nextInput = document.getElementById(nextField);
+
+    if (currentInput.value.length === currentInput.maxLength) {
+        nextInput.focus();
+    }
+  }
+  const copyName = ()=>{
+    const cardName = document.querySelector("#cardname").value;
+
+    document.getElementById("cardname-copy").textContent = cardName;
+ 
+  
+  }
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
   const [modalRegistration, setModalRegistration] = useState(false);
@@ -124,16 +148,43 @@ const SingleProduct = () => {
                             d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z"
                           />
                         </g>
+                        
                         <text
-                          transform="matrix(1 0 0 1 60.106 295.0121)"
-                          id="svgnumber"
+                          transform="matrix(1 0 0 1 60 295.0121)"
+                          id="cardno-copy-1"
                           class="st2 st3 st4"
                         >
-                          0123 4567 8910 1112
+                          0000
+                        
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 200 295.0121)"
+                          id="cardno-copy-2"
+                          class="st2 st3 st4"
+                        >
+                          0000
+                        
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 340 295.0121)"
+                          id="cardno-copy-3"
+                          class="st2 st3 st4"
+                        >
+                          0000
+                        
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 480 295.0121)"
+                          id="cardno-copy-4"
+                          class="st2 st3 st4"
+                        >
+                          0000
+                        
                         </text>
                         <text
                           transform="matrix(1 0 0 1 54.1064 428.1723)"
-                          id="svgname"
+                          id="cardname-copy"
                           class="st2 st5 st6"
                         >
                           JOHN DOE
@@ -414,8 +465,10 @@ const SingleProduct = () => {
                       <Form.Label>Card name</Form.Label>
                       <Form.Control
                         name="cardname"
+                        id="cardname"  
                         placeholder="cardname"
                         onChange={handleChange}
+                        onKeyUp={copyName}
                       />
                     </div>
                     <div className="col-12">
@@ -424,16 +477,40 @@ const SingleProduct = () => {
                   
 
                           <div className="col-3" >
-                            <input type="text" id="cardno-1" className="w-100" maxlength="4" />
+                          <Form.Control
+                        maxLength={4}
+                        id="cardno-1"   
+                        onKeyUp={() => copyText('cardno-1', 'cardno-2')}
+                        onChange={handleChange}
+                      />
+                          
                           </div>
                           <div className="col-3" >
-                            <input type="text" id="cardno-2" className="w-100"  maxlength="4" />
+                          <Form.Control
+                        maxLength={4}
+                        id="cardno-2"   
+                        onKeyUp={() => copyText('cardno-2', 'cardno-3')}
+                        onChange={handleChange}
+                      />
+                          
                           </div>
                           <div className="col-3" >
-                            <input type="text" id="cardno-3" className="w-100"  maxlength="4" />
+                          <Form.Control
+                        maxLength={4}
+                        id="cardno-3"   
+                        onKeyUp={() => copyText('cardno-3', 'cardno-4')}
+                        onChange={handleChange}
+                      />
+                          
                           </div>
                           <div className="col-3" >
-                            <input type="text" id="cardno-4" className="w-100"  maxlength="4" />
+                          <Form.Control
+                        maxLength={4}
+                        id="cardno-4"   
+                        onKeyUp={() => copyText('cardno-4', 'expdate')}
+                        onChange={handleChange}
+                      />
+                          
                           </div>
                        
                       </div>
@@ -447,6 +524,7 @@ const SingleProduct = () => {
                         name="carddate"
                         value={reservation.carddate}
                         placeholder="carddate"
+                        id="expdate"
                         onChange={handleChange}
                       />
                     </div>

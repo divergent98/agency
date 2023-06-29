@@ -7,7 +7,7 @@ import axios from "axios";
 
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
-import moment, { months } from "moment";
+import moment from "moment";
 import check from "./img/check-mark.png";
 import calendar from "./img/calendar.png";
 import cancel from "./img/cancel.png";
@@ -58,10 +58,25 @@ const SingleProduct = () => {
     const cardno_3 = document.querySelector("#cardno-3").value;
     const cardno_4 = document.querySelector("#cardno-4").value;
 
+
     document.getElementById("cardno-copy-1").textContent = cardno_1;
     document.getElementById("cardno-copy-2").textContent = cardno_2;
     document.getElementById("cardno-copy-3").textContent = cardno_3;
     document.getElementById("cardno-copy-4").textContent = cardno_4;
+    const currentInput = document.getElementById(currentField);
+    const nextInput = document.getElementById(nextField);
+
+    if (currentInput.value.length === currentInput.maxLength) {
+      nextInput.focus();
+    }
+  };
+  const copyExpDate = (currentField, nextField) => {
+    const expmonth = document.querySelector("#expmonth").value;
+    const expyear = document.querySelector("#expyear").value;
+    console.log(expmonth)
+    document.getElementById("expmonth-copy").textContent = expmonth;
+    document.getElementById("expyear-copy").textContent = expyear;
+
     const currentInput = document.getElementById(currentField);
     const nextInput = document.getElementById(nextField);
 
@@ -74,6 +89,16 @@ const SingleProduct = () => {
 
     document.getElementById("cardname-copy").textContent = cardName;
   };
+  const filterInput = (event) => {
+    const inputElement = event.target;
+    const inputValue = inputElement.value;
+    const filteredValue = inputValue.replace(/\D/g, '');
+    inputElement.value = filteredValue;
+}
+const cvc = document.querySelector("#cvc")
+cvc.addEventListener('focus', function () {
+  document.querySelector('.creditcard').classList.add('flipped');
+});
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
   const [modalRegistration, setModalRegistration] = useState(false);
@@ -203,11 +228,25 @@ const SingleProduct = () => {
                         </text>
                         <g>
                           <text
-                            transform="matrix(1 0 0 1 574.4219 433.8095)"
-                            id="svgexpire"
+                            transform="matrix(1 0 0 1 570 433.8095)"
+                            id="expmonth-copy"
                             class="st2 st5 st9"
                           >
-                            01/23
+                            01
+                          </text>
+                          <text
+                            transform="matrix(1 0 0 1 615 433.8095)"
+    
+                            class="st2 st5 st9"
+                          >
+                            /
+                          </text>
+                          <text
+                            transform="matrix(1 0 0 1 640 433.8095)"
+                            id="expyear-copy"
+                            class="st2 st5 st9"
+                          >
+                            23
                           </text>
                           <text
                             transform="matrix(1 0 0 1 479.3848 417.0097)"
@@ -470,10 +509,13 @@ const SingleProduct = () => {
                       <div className="row">
                         <div className="col-3">
                           <Form.Control
-                            maxLength={4}
-                            id="cardno-1"
+                            maxLength={4} 
+                            pattern={/^[0-9]+$/}
+                            className="number-field"
+                         
+                           id="cardno-1"
                             onKeyUp={() => copyText("cardno-1", "cardno-2")}
-                            onChange={handleChange}
+                            onChange={filterInput}
                           />
                         </div>
                         <div className="col-3">
@@ -496,7 +538,7 @@ const SingleProduct = () => {
                           <Form.Control
                             maxLength={4}
                             id="cardno-4"
-                            onKeyUp={() => copyText("cardno-4", "expdate")}
+                            onKeyUp={() => copyText("cardno-4", "expmonth")}
                             onChange={handleChange}
                           />
                         </div>
@@ -509,16 +551,16 @@ const SingleProduct = () => {
                       <Form.Label>Expiration date</Form.Label>
                       <div className="row">
                         <div className="col-6">
-                        <Form.Select >
-                            <option value="1">Jan</option>
-                            <option value="2">Feb</option>
-                            <option value="3">Mar</option>
-                            <option value="4">Apr</option>
-                            <option value="5">May</option>
-                            <option value="6">Jun</option>
-                            <option value="7">Jul</option>
-                            <option value="8">Aug</option>
-                            <option value="9">Sep</option>
+                        <Form.Select id="expmonth" onClick={() => copyExpDate("expmonth", "expyear")}>
+                            <option value="01">Jan</option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                            <option value="05">May</option>
+                            <option value="06">Jun</option>
+                            <option value="07">Jul</option>
+                            <option value="08">Aug</option>
+                            <option value="09">Sep</option>
                             <option value="10">Oct</option>
                             <option value="11">Nov</option>
                             <option value="12">Dec</option>
@@ -526,7 +568,7 @@ const SingleProduct = () => {
                         </div>
                         <div className="col-6">
                       
-                          <Form.Select >
+                          <Form.Select id="expyear" onClick={() => copyExpDate("expyear", "cvc")}>
                             <option value="23">2023</option>
                             <option value="24">2024</option>
                             <option value="25">2025</option>
@@ -544,9 +586,11 @@ const SingleProduct = () => {
                       <Form.Label>CVC</Form.Label>
                       <Form.Control
                         name="cvc"
-                        value={reservation.cvc}
-                        placeholder="cvc"
-                        onChange={handleChange}
+                        id="cvc"
+                   
+                        maxLength={4} 
+                    
+                        onChange={filterInput}
                       />
                     </div>
                   </div>

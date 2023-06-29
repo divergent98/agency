@@ -1098,3 +1098,14 @@ width: 80px;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+
+.number-field::-webkit-outer-spin-button,
+.number-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.number-field[type=number] {
+  -moz-appearance: textfield;
+}

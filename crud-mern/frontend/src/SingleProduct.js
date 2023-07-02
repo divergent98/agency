@@ -12,6 +12,8 @@ import check from "./img/check-mark.png";
 import calendar from "./img/calendar.png";
 import cancel from "./img/cancel.png";
 import ticket from "./img/tickets.png";
+import left from "./img/left.png";
+import right from "./img/right.png";
 const SingleProduct = () => {
   const [reservation, setReservation] = useState({
     name: "",
@@ -58,7 +60,6 @@ const SingleProduct = () => {
     const cardno_3 = document.querySelector("#cardno-3").value;
     const cardno_4 = document.querySelector("#cardno-4").value;
 
-
     document.getElementById("cardno-copy-1").textContent = cardno_1;
     document.getElementById("cardno-copy-2").textContent = cardno_2;
     document.getElementById("cardno-copy-3").textContent = cardno_3;
@@ -73,7 +74,7 @@ const SingleProduct = () => {
   const copyExpDate = (currentField, nextField) => {
     const expmonth = document.querySelector("#expmonth").value;
     const expyear = document.querySelector("#expyear").value;
-    console.log(expmonth)
+    console.log(expmonth);
     document.getElementById("expmonth-copy").textContent = expmonth;
     document.getElementById("expyear-copy").textContent = expyear;
 
@@ -88,6 +89,7 @@ const SingleProduct = () => {
     const cardName = document.querySelector("#cardname").value;
 
     document.getElementById("cardname-copy").textContent = cardName;
+    document.getElementById("copy-name-back").textContent = cardName;
   };
   const copyCVC = () => {
     const cardCVC = document.querySelector("#cvc").value;
@@ -97,36 +99,38 @@ const SingleProduct = () => {
   const filterInput = (event) => {
     const inputElement = event.target;
     const inputValue = inputElement.value;
-    const filteredValue = inputValue.replace(/\D/g, '');
+    const filteredValue = inputValue.replace(/\D/g, "");
     inputElement.value = filteredValue;
-}
+  };
   const flipCard = (event) => {
-    const front = document.querySelector("#custom-card-front");
-    const back = document.querySelector("#custom-card-back");
+  /*   const front = document.querySelector("#custom-card-front");
+    const back = document.querySelector("#custom-card-back"); */
+    const creditcard = document.querySelector("#creditcard")
+   /*  front.classList.toggle("hidden-modal");
+    back.classList.toggle("hidden-modal"); */
+    creditcard.classList.toggle('is-flipped');
 
-    front.classList.toggle("hidden-modal");
-    back.classList.toggle("hidden-modal");
-  }
+  };
   const flipCardCVC = (event) => {
     const front = document.querySelector("#custom-card-front");
     const back = document.querySelector("#custom-card-back");
 
-    if (front.classList.contains("hidden-modal")==false){
-          front.classList.add("hidden-modal");
-          back.classList.remove("hidden-modal")
+    if (front.classList.contains("hidden-modal") == false) {
+      front.classList.add("hidden-modal");
+      back.classList.remove("hidden-modal");
+      
     }
-
-  }
+  };
   const flipCardOther = (event) => {
     const front = document.querySelector("#custom-card-front");
     const back = document.querySelector("#custom-card-back");
 
-    if (back.classList.contains("hidden-modal")==false){
-          back.classList.add("hidden-modal");
-          front.classList.remove("hidden-modal")
-    }
+    if (back.classList.contains("hidden-modal") == false) {
+      back.classList.add("hidden-modal");
+      front.classList.remove("hidden-modal");
 
-  }
+    }
+  };
 
   const { productId } = useParams();
   const [products, setProducts] = React.useState(null);
@@ -146,7 +150,7 @@ const SingleProduct = () => {
   const formattedDate = moment(product.date).format("DD-MM-YYYY");
 
   reservation.destination = product.name;
-  
+
   return (
     <section>
       <div className="col-4 px-5" onClick={toggleRegistration}></div>
@@ -171,9 +175,12 @@ const SingleProduct = () => {
               <div className="ticket-image-div " id="part-1-image">
                 <img src={ticket} className="ticket-image"></img>
               </div>
-              <div className="ticket-image-div hidden-modal" id="part-2-image">
-                <div class="creditcard" onClick={flipCard}>
-                   <div class="front" id="custom-card-front" >
+              <div
+                className="creditcard-image-div hidden-modal"
+                id="part-2-image"
+              >
+                <div class="creditcard" id="creditcard" onClick={flipCard}>
+                  <div class="front" >
                     <div id="ccsingle"></div>
                     <svg
                       version="1.1"
@@ -189,14 +196,14 @@ const SingleProduct = () => {
                             <g id="amex_1_">
                               <path
                                 id="Rectangle-1_1_"
-                                class="lightcolor grey"
+                                fill="#0db4f3"
                                 d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
                             C0,17.9,17.9,0,40,0z"
                               />
                             </g>
                           </g>
                           <path
-                            class="darkcolor greydark"
+                            fill="#05a4c8"
                             d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z"
                           />
                         </g>
@@ -265,7 +272,6 @@ const SingleProduct = () => {
                           </text>
                           <text
                             transform="matrix(1 0 0 1 615 433.8095)"
-    
                             class="st2 st5 st9"
                           >
                             /
@@ -372,8 +378,8 @@ const SingleProduct = () => {
                       </g>
                       <g id="Back"></g>
                     </svg>
-                  </div> 
-                  <div class="back hidden-modal" id="custom-card-back">
+                  </div>
+                  <div class="back " id="custom-card-back">
                     <svg
                       version="1.1"
                       id="cardback"
@@ -396,7 +402,7 @@ const SingleProduct = () => {
                           <g id="amex_2_">
                             <path
                               id="Rectangle-1_2_"
-                              class="darkcolor greydark"
+                              fill="#05a4c8"
                               d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
                         C0,17.9,17.9,0,40,0z"
                             />
@@ -432,7 +438,6 @@ const SingleProduct = () => {
                           transform="matrix(1 0 0 1 621.999 227.2734)"
                           id="cvc-copy"
                           class="st6 st7"
-            
                         >
                           985
                         </text>
@@ -460,7 +465,7 @@ const SingleProduct = () => {
                         />
                         <text
                           transform="matrix(1 0 0 1 59.5073 228.6099)"
-                          id="svgnameback"
+                          id="copy-name-back"
                           class="st12 st13"
                         >
                           John Doe
@@ -475,7 +480,7 @@ const SingleProduct = () => {
               <Form>
                 <div id="part-1">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12">
                       <Form.Label>Name</Form.Label>
                       <Form.Control
                         name="name"
@@ -484,7 +489,7 @@ const SingleProduct = () => {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12">
                       <Form.Label>Last name</Form.Label>
                       <Form.Control
                         name="lastname"
@@ -514,13 +519,14 @@ const SingleProduct = () => {
                       />
                     </div>
                   </div>
-                  <Button
-                    variant="secondary"
-                    className="mt-5"
-                    onClick={handleNavigation}
-                  >
-                    Next
-                  </Button>
+                  <div className="next-button">
+                    <Button
+                      className="mt-5 bg-transparent border-0 ms-5 custom-margin-right "
+                      onClick={handleNavigation}
+                    >
+                      <img src={right}></img>
+                    </Button>
+                  </div>
                 </div>
                 <div id="part-2" className="hidden-modal">
                   <div className="row">
@@ -540,11 +546,9 @@ const SingleProduct = () => {
                       <div className="row">
                         <div className="col-3">
                           <Form.Control
-                            maxLength={4} 
-                           
+                            maxLength={4}
                             className="number-field"
-                         
-                           id="cardno-1"
+                            id="cardno-1"
                             onKeyUp={() => copyText("cardno-1", "cardno-2")}
                             onFocus={flipCardOther}
                             onChange={filterInput}
@@ -581,12 +585,16 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-8">
                       {" "}
                       <Form.Label>Expiration date</Form.Label>
                       <div className="row">
                         <div className="col-6">
-                        <Form.Select id="expmonth" onClick={() => copyExpDate("expmonth", "expyear")} onFocus={flipCardOther}>
+                          <Form.Select
+                            id="expmonth"
+                            onClick={() => copyExpDate("expmonth", "expyear")}
+                            onFocus={flipCardOther}
+                          >
                             <option value="01">Jan</option>
                             <option value="02">Feb</option>
                             <option value="03">Mar</option>
@@ -602,8 +610,11 @@ const SingleProduct = () => {
                           </Form.Select>
                         </div>
                         <div className="col-6">
-                      
-                          <Form.Select id="expyear" onClick={() => copyExpDate("expyear", "cvc")} onFocus={flipCardOther}>
+                          <Form.Select
+                            id="expyear"
+                            onClick={() => copyExpDate("expyear", "cvc")}
+                            onFocus={flipCardOther}
+                          >
                             <option value="23">2023</option>
                             <option value="24">2024</option>
                             <option value="25">2025</option>
@@ -613,36 +624,37 @@ const SingleProduct = () => {
                             <option value="29">2029</option>
                             <option value="30">2030</option>
                           </Form.Select>
-                    </div>
                         </div>
                       </div>
-      
-                    <div className="col-6">
+                    </div>
+
+                    <div className="col-4">
                       <Form.Label>CVC</Form.Label>
                       <Form.Control
                         name="cvc"
                         id="cvc"
                         onFocus={flipCardCVC}
-                        maxLength={4} 
+                        maxLength={4}
                         onKeyUp={copyCVC}
                         onChange={filterInput}
                       />
                     </div>
                   </div>
-                  <Button
-                    variant="secondary"
-                    className="mt-5"
-                    onClick={handleNavigation}
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    className="mt-5"
-                    onClick={handleClick}
-                  >
-                    Add Product
-                  </Button>
+                  <div className="back-add-button">
+                    <Button
+                      className="mt-5 bg-transparent border-0 custom-margin-left"
+                      onClick={handleNavigation}
+                    >
+                      <img src={left}></img>
+                    </Button>
+                    <Button
+                  
+                      className="btn custom-button  text-light border-0 rounded-0 submit-button" 
+                      onClick={handleClick}
+                    >
+                      Submit
+                    </Button>
+                  </div>
                 </div>
               </Form>
             </div>

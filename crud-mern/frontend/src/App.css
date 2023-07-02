@@ -818,7 +818,7 @@ width: 80px;
 
 .ticket-image-div {
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 25px;
   box-shadow: 0 0 30px rgba(5, 164, 200, 0.19);
   padding: 30px;
   margin-top: 20px;
@@ -1064,4 +1064,52 @@ width: 80px;
 /* FLIP ANIMATION */
 .container {
   perspective: 1000px;
+}
+
+.creditcard-image-div {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(5, 164, 200, 0.19);
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: -70px;
+}
+
+.card-background-color{
+  background-color: var(--blue);
+}
+.next-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.back-add-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.custom-margin-left{
+  margin-left: -12px;
+}
+.custom-margin-right{
+  margin-right: -12px;
+}
+.submit-button{
+  margin-top: 55px !important;
+}
+
+.creditcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.creditcard.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
 }

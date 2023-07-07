@@ -103,12 +103,13 @@ const SingleProduct = () => {
     inputElement.value = filteredValue;
   };
   const flipCard = (event) => {
-  /*   const front = document.querySelector("#custom-card-front");
-    const back = document.querySelector("#custom-card-back"); */
+    const front = document.querySelector("#custom-card-front");
+    const back = document.querySelector("#custom-card-back"); 
     const creditcard = document.querySelector("#creditcard")
-   /*  front.classList.toggle("hidden-modal");
-    back.classList.toggle("hidden-modal"); */
-    creditcard.classList.toggle('is-flipped');
+
+    back.classList.toggle("hidden-modal");
+
+  front.classList.toggle("hidden-modal");
 
   };
   const flipCardCVC = (event) => {
@@ -179,8 +180,8 @@ const SingleProduct = () => {
                 className="creditcard-image-div hidden-modal"
                 id="part-2-image"
               >
-                <div class="creditcard" id="creditcard" onClick={flipCard}>
-                  <div class="front" >
+                <div class="creditcard" id="creditcard" >
+                  <div class="front" onClick={flipCard}>
                     <div id="ccsingle"></div>
                     <svg
                       version="1.1"
@@ -379,7 +380,7 @@ const SingleProduct = () => {
                       <g id="Back"></g>
                     </svg>
                   </div>
-                  <div class="back " id="custom-card-back">
+                  <div class="back " id="custom-card-back" onClick={flipCard}>
                     <svg
                       version="1.1"
                       id="cardback"

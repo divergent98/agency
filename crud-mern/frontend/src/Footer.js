@@ -9,16 +9,16 @@ export const Footer = () => {
   return (
     <div className="background-dark-gray">
       <div className="container py-5">
-        <div className="row">
-          <div className="col-3 social" >
+        <div className="row ">
+          <div className="col-lg-3 col-md-6 col-sm-12 social" >
             <div className="logo">
-              <img className="footer-logo" src={logo} />
+              <img className="footer-logo " src={logo} />
             </div>
             <div className="social-media-icons">
               <h6 class="gradient-headline font-18 blinker mt-4 mb-3">
                 Follow Us
               </h6>
-              <div class="d-flex">
+              <div class="d-flex ">
                 <a class="me-4" href="#">
                   <img src={instagram} />
                 </a>
@@ -35,7 +35,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="col-3 polices">
+          <div className="col-lg-3 col-md-6 col-sm-12 polices">
             <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Company polices
             </h6>
@@ -46,7 +46,7 @@ export const Footer = () => {
               <li><Link className="decoration-none text-light">Careers</Link></li>
             </ul>
           </div>
-          <div className="col-3 quick-links">
+          <div className="col-lg-3 col-md-6 col-sm-12 quick-links">
             <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Site Navigation
             </h6>
@@ -57,7 +57,7 @@ export const Footer = () => {
               <li><Link className="decoration-none text-light">Contact</Link></li>
             </ul>
           </div>
-          <div className="col-3 contact">
+          <div className="col-lg-3 col-md-6 col-sm-12 contact">
             <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Contact us
             </h6>

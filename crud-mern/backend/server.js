@@ -47,9 +47,9 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  date: { 
-    type: Date, 
-    default: Date.now 
+  date: {
+    type: Date,
+    default: Date.now,
   },
   image: {
     type: String,
@@ -64,7 +64,11 @@ const productSchema = mongoose.Schema({
     default: "",
     required: true,
   },
-
+  isFeatured: {
+    type: String,
+    default: "",
+    required: true,
+  },
 });
 const Product = mongoose.model("Product", productSchema);
 //--------------------------------------------------------------------------------------reservation schema
@@ -85,25 +89,13 @@ const reservationSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  date: { 
-    type: Date, 
-    default: Date.now 
+  date: {
+    type: Date,
+    default: Date.now,
   },
   destination: {
     type: String,
     default: "",
-  },
-  cardno: {
-    type: String,
-    required: true,
-  },
-  carddate: { 
-    type: String, 
-    required: true,
-  },
-  cvc: {
-    type: String,
-    required: true,
   },
 });
 const Reservation = mongoose.model("Reservation", reservationSchema);
@@ -114,6 +106,7 @@ app.post("/create", (req, res) => {
     description: req.body.description,
     content: req.body.content,
     category: req.body.category,
+
     image: req.body.image,
   })
     .then((doc) => console.log(doc))
@@ -133,6 +126,7 @@ app.delete("/delete/:id", (req, res) => {
       description: req.body.description,
       content: req.body.content,
       category: req.body.category,
+
       image: req.body.image,
     }
   )
@@ -147,6 +141,7 @@ app.put("/update/:id", (req, res) => {
       description: req.body.description,
       content: req.body.content,
       category: req.body.category,
+
       image: req.body.image,
     }
   )
@@ -163,7 +158,7 @@ app.post("/createProduct", (req, res) => {
     image: req.body.image,
     price: req.body.price,
     category: req.body.category,
-
+    isFeatured: req.body.isFeatured,
   })
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
@@ -185,7 +180,7 @@ app.delete("/deleteProduct/:id", (req, res) => {
       image: req.body.image,
       price: req.body.price,
       category: req.body.category,
-
+      isFeatured: req.body.isFeatured,
     }
   )
     .then((doc) => console.log(doc))
@@ -202,7 +197,7 @@ app.put("/updateProduct/:id", (req, res) => {
       image: req.body.image,
       price: req.body.price,
       category: req.body.category,
-
+      isFeatured: req.body.isFeatured,
     }
   )
     .then((doc) => console.log(doc))
@@ -216,9 +211,6 @@ app.post("/createReservation", (req, res) => {
     phone: req.body.phone,
     email: req.body.email,
     destination: req.body.destination,
-    cardno: req.body.cardno,
-    carddate: req.body.carddate,
-    cvc: req.body.cvc
   })
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
@@ -238,10 +230,6 @@ app.delete("/deleteReservation/:id", (req, res) => {
       phone: req.body.phone,
       email: req.body.email,
       destination: req.body.destination,
-      cardno: req.body.cardno,
-      carddate: req.body.carddate,
-      cvc: req.body.cvc
-
     }
   )
     .then((doc) => console.log(doc))

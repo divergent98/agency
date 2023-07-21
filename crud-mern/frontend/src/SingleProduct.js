@@ -21,27 +21,123 @@ const SingleProduct = () => {
     phone: "",
     email: "",
     destination: "",
-    cardno: "",
-    carddate: "",
-    cvc: "",
+ 
   });
   const handleClick = (event) => {
     event.preventDefault();
-
-    axios
+    let validationMessage = document.querySelector("#validation-message-card");
+    const cardname = document.querySelector('#cardname').value;
+    const cardno_1 = document.querySelector("#cardno-1").value;
+    const cardno_2 = document.querySelector("#cardno-2").value;
+    const cardno_3 = document.querySelector("#cardno-3").value;
+    const cardno_4 = document.querySelector("#cardno-4").value;   
+    const expmonth = document.querySelector("#expmonth").value;
+    const expyear = document.querySelector("#expyear").value;
+    const cvc = document.querySelector("#cvc").value;
+    let message = validateCard(cardname, cardno_1, cardno_2, cardno_3, cardno_4, expmonth, expyear, cvc);
+    console.log(cardname);
+    if(message !== ''){
+      validationMessage.innerHTML=message
+    }else{
+       axios
       .post("/createReservation", reservation)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    const cardno_1 = document.querySelector("#cardno-1");
-    console.log("this is the value " + cardno_1.value);
+    
     toggleRegistration();
+    }
+   
   };
+  
+  const validate = (firstName, lastName, phone, email) => {
+    let message= '';
+    if (firstName === '') {
+      message = 'First name is empty';
+      return message;
+    } else if (lastName === '') {
+      message = 'Last name is empty';
+      return message;
+    } else if (phone === '') {
+      message = 'Phone number is empty';
+      return message;
+    } else {
+      let phoneNumber = phone.replace(/\D/g, '');
+  
+      // Check if the phone number is empty
+      if (phoneNumber === '') {
+        message= 'Phone number is empty';
+        return message;
+      }
+  
+      // Check if the phone number has 10 digits
+      if (phoneNumber.length !== 10) {
+        message = 'Phone number should have 10 digits';
+        return message;
+      }
+  
+      // Check if the first digit is not 0 or 1
+      if (phoneNumber.charAt(0) === '0' || phoneNumber.charAt(0) === '1') {
+        message = 'Phone number should not start with 0 or 1';
+        return message;
+      }
+    }
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '') {
+      message = 'Email is empty';
+      return message;
+    } else if(pattern.test(email)===false){
+        message = 'Please enter a valid email'
+        return message;
+      } else{
+        message = '';
+        return message
+      }
+    
+  };
+  const validateCard = (cardname, cardno1, cardno2, cardno3, cardno4, date1, date2, cvc) => {
+    let message = '';
+    if(cardname === ''){
+      message = 'Card name is empty';
+      return message
+    }else if(cardno1 === '' || cardno2 === '' || cardno3 === '' || cardno4 === ''){
+      message = 'Card number is wrong';
+      return message
+    }else if(date1 === ''){
+      message = 'Month is empty';
+      return message
+    }else if(date2 === ''){
+      message = 'Year is empty';
+      return message
+    }else if(cvc === ''){
+      message = 'cvc is empty';
+      return message
+    }else{
+      message = '';
+      return message
+    }
+
+  }
+  
   const handleNavigation = (event) => {
     event.preventDefault();
+    const firstName = document.querySelector("#firstname").value;
+    const lastName = document.querySelector("#lastname").value;
+    const phone = document.querySelector("#phone").value;
+    const email = document.querySelector("#email").value;
+    let validationMessage = document.querySelector("#validation-message");
+    let message =validate(firstName, lastName, phone, email);
+    if(message !== ''){
+      validationMessage.innerHTML = message;
+    }else{
+      validationMessage.innerHTML = "";
     document.querySelector("#part-1").classList.toggle("hidden-modal");
     document.querySelector("#part-2").classList.toggle("hidden-modal");
     document.querySelector("#part-1-image").classList.toggle("hidden-modal");
     document.querySelector("#part-2-image").classList.toggle("hidden-modal");
+    }
+
+    
+
   };
   const handleChange = (event) => {
     console.log(event.target);
@@ -110,26 +206,27 @@ const SingleProduct = () => {
     back.classList.toggle("hidden-modal");
 
   front.classList.toggle("hidden-modal");
+  creditcard.classList.toggle('is-flipped')
 
   };
   const flipCardCVC = (event) => {
     const front = document.querySelector("#custom-card-front");
     const back = document.querySelector("#custom-card-back");
-
+    const creditcard = document.querySelector("#creditcard")
     if (front.classList.contains("hidden-modal") == false) {
       front.classList.add("hidden-modal");
       back.classList.remove("hidden-modal");
-      
+      creditcard.classList.toggle('is-flipped')
     }
   };
   const flipCardOther = (event) => {
     const front = document.querySelector("#custom-card-front");
     const back = document.querySelector("#custom-card-back");
-
+    const creditcard = document.querySelector("#creditcard")
     if (back.classList.contains("hidden-modal") == false) {
       back.classList.add("hidden-modal");
       front.classList.remove("hidden-modal");
-
+      creditcard.classList.toggle('is-flipped')
     }
   };
 
@@ -137,6 +234,10 @@ const SingleProduct = () => {
   const [products, setProducts] = React.useState(null);
   const [modalRegistration, setModalRegistration] = useState(false);
   const toggleRegistration = () => setModalRegistration(!modalRegistration);
+ 
+  const [modalConfirmation, setModalConfirmation] = useState(false);
+  const toggleConfirmation = () => setModalConfirmation(!modalConfirmation);
+ 
   React.useEffect(() => {
     axios.get("/products").then((response) => {
       setProducts(response.data);
@@ -181,7 +282,7 @@ const SingleProduct = () => {
                 id="part-2-image"
               >
                 <div class="creditcard" id="creditcard" >
-                  <div class="front" onClick={flipCard}>
+                  <div class="front" id="custom-card-front" onClick={flipCard}>
                     <div id="ccsingle"></div>
                     <svg
                       version="1.1"
@@ -312,8 +413,7 @@ const SingleProduct = () => {
                           <g>
                             <g>
                               <rect
-                                x="82"
-                                y="70"
+                          
                                 class="st12"
                                 width="1.5"
                                 height="60"
@@ -321,8 +421,7 @@ const SingleProduct = () => {
                             </g>
                             <g>
                               <rect
-                                x="167.4"
-                                y="70"
+                            
                                 class="st12"
                                 width="1.5"
                                 height="60"
@@ -380,7 +479,7 @@ const SingleProduct = () => {
                       <g id="Back"></g>
                     </svg>
                   </div>
-                  <div class="back " id="custom-card-back" onClick={flipCard}>
+                  <div class="back hidden-modal" id="custom-card-back" onClick={flipCard}>
                     <svg
                       version="1.1"
                       id="cardback"
@@ -485,6 +584,7 @@ const SingleProduct = () => {
                       <Form.Label>Name</Form.Label>
                       <Form.Control
                         name="name"
+                        id="firstname"
                         value={reservation.name}
                         placeholder="name"
                         onChange={handleChange}
@@ -494,6 +594,7 @@ const SingleProduct = () => {
                       <Form.Label>Last name</Form.Label>
                       <Form.Control
                         name="lastname"
+                        id="lastname"
                         value={reservation.lastname}
                         placeholder="lastname"
                         onChange={handleChange}
@@ -505,6 +606,7 @@ const SingleProduct = () => {
                       <Form.Label>Phone</Form.Label>
                       <Form.Control
                         name="phone"
+                        id="phone"
                         value={reservation.phone}
                         placeholder="phone"
                         onChange={handleChange}
@@ -514,10 +616,15 @@ const SingleProduct = () => {
                       <Form.Label>Email</Form.Label>
                       <Form.Control
                         name="email"
+                        id="email"
+                        type="email"
                         value={reservation.email}
                         placeholder="email"
                         onChange={handleChange}
                       />
+                    </div>
+                    <div className="col-12">
+                      <p id="validation-message"></p>
                     </div>
                   </div>
                   <div className="next-button">
@@ -640,6 +747,9 @@ const SingleProduct = () => {
                         onChange={filterInput}
                       />
                     </div>
+                    <div className="col-12">
+                    <p id="validation-message-card"></p>
+                    </div>
                   </div>
                   <div className="back-add-button">
                     <Button
@@ -660,6 +770,15 @@ const SingleProduct = () => {
               </Form>
             </div>
           </div>
+        </ModalBody>
+      </Modal>
+      <Modal
+        className="mt-5 modal modal-dialog modal-dialog-centered"
+        isOpen={modalConfirmation}
+        toggle={toggleConfirmation}
+      >
+        <ModalBody toggle={toggleConfirmation} className="">
+          <div>Confirmed</div>
         </ModalBody>
       </Modal>
       <div className="container product-view">

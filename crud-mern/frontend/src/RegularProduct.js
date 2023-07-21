@@ -25,9 +25,9 @@ export const RegularProducts = () => {
         {products.length > 0 ? (
           <div className="row ">
             {products.map((product) => {
-              if (product.isFeatured === "false") {
+              if (product.isFeatured === "true" && product.category === "special") {
                 return (
-                  <div className="col-3 ">
+                  <div className="col-lg-3 col-md-3 col-sm-6">
                     <Link className="decoration-none">
                     <figure class="snip regular-product" key={product._id}>
                       <img src={product.image} alt="sample85" />
@@ -69,11 +69,11 @@ export const RegularProducts = () => {
         )}
       </ListGroup>
       <div className="row justify-content-center">
-        <div className="col-3">
+
           <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3">
             See more...
           </Link>
-        </div>
+
       </div>
     </div>
   );

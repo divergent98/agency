@@ -30,7 +30,7 @@ export const Services = () => {
           </p>
         </div>
         <div className="row py-5">
-          <div className="col-4 px-5" onClick={togglePayment}>
+          <div className="col-lg-4 col-md-4 col-sm-12 px-5 mt-5" onClick={togglePayment}>
             <div class="card text-center service-card pt-5 rounded-0">
               <img class="card-img-top " src={payment} height="auto" alt="" />
               <div class="card-body">
@@ -47,7 +47,7 @@ export const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col-4 px-5" onClick={toggleService}>
+          <div className="col-lg-4 col-md-4 col-sm-12 px-5 mt-5" onClick={toggleService}>
             <div class="card text-center service-card pt-5 rounded-0">
               <img class="card-img-top" src={service} alt="" />
               <div class="card-body">
@@ -64,7 +64,7 @@ export const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col-4 px-5" onClick={toggleWorld}>
+          <div className="col-lg-4 col-md-4 col-sm-12 px-5 mt-5" onClick={toggleWorld}>
             <div class="card text-center service-card pt-5 rounded-0">
               <img class="card-img-top" src={world} alt="" />
               <div class="card-body">
@@ -84,27 +84,27 @@ export const Services = () => {
         </div>
       </div>
       <Modal
-        className="mt-5 modal-lg modal-dialog modal-dialog-centered"
+        className="mt-5 modal-lg modal-dialog modal-dialog-centered custom-modal-mobile"
         isOpen={modalPayment}
         toggle={togglePayment}
       >
         <ModalBody toggle={togglePayment} className="">
-          <div className="row justify-content-end">
-            <div className="col-1">
+
+            <div className="button-end">
               <Button color="transparent " onClick={togglePayment}>
                 <img src={cancel}></img>
               </Button>
-            </div>
+      
           </div>
 
           <div className="row">
-            <div className="col-3">
+            <div className="col-lg-3 col-md-3 col-sm-12">
               <div className="modal-image-div ">
                 <img src={payment} className="modal-image "></img>
               </div>
             </div>
-            <div className="col-9">
-              <h4 class="card-title blinker font-24 gradient-headline ms-3">
+            <div className="col-lg-9 col-md-9 col-sm-12">
+              <h4 class="card-title blinker font-24 gradient-headline ms-3 mt-3">
                   Easy Payment Options
               </h4>
               <p className="custom-paragraph m-3 pb-4">
@@ -122,28 +122,28 @@ export const Services = () => {
           </div>
         </ModalBody>
       </Modal>
-      <Modal
-        className="mt-5 modal-lg modal-dialog modal-dialog-centered"
+      <Modal 
+        className="mt-5 modal-lg modal-dialog modal-dialog-centered custom-modal-mobile"
         isOpen={modalService}
         toggle={toggleService}
       >
         <ModalBody toggle={toggleService} className="">
-          <div className="row justify-content-end">
-            <div className="col-1">
+          <div className="button-end">
+     
               <Button color="transparent " onClick={toggleService}>
                 <img src={cancel}></img>
               </Button>
-            </div>
+   
           </div>
 
           <div className="row">
-            <div className="col-3">
+            <div className="col-lg-3 col-md-3 col-sm-12">
               <div className="modal-image-div ">
                 <img src={service} className="modal-image "></img>
               </div>
             </div>
-            <div className="col-9">
-            <h4 class="card-title blinker font-24 gradient-headline ms-3">
+            <div className="col-lg-9 col-md-9 col-sm-12">
+            <h4 class="card-title blinker font-24 gradient-headline ms-3 mt-3">
             24/7 Call Center
                 </h4>
               <p className="custom-paragraph m-3 pb-4">
@@ -163,27 +163,27 @@ export const Services = () => {
         </ModalBody>
       </Modal>
       <Modal
-        className="mt-5 modal-lg modal-dialog modal-dialog-centered"
+        className="mt-5 modal-lg modal-dialog modal-dialog-centered custom-modal-mobile"
         isOpen={modalWorld}
         toggle={toggleWorld}
       >
         <ModalBody toggle={toggleWorld} className="">
-          <div className="row justify-content-end">
-            <div className="col-1">
+          <div className="button-end">
+
               <Button color="transparent " onClick={toggleWorld}>
                 <img src={cancel}></img>
               </Button>
-            </div>
+
           </div>
 
           <div className="row">
-            <div className="col-3">
+            <div className="col-lg-3 col-md-3 col-sm-12">
               <div className="modal-image-div ">
                 <img src={world} className="modal-image "></img>
               </div>
             </div>
-            <div className="col-9">
-            <h4 class="card-title blinker font-24 gradient-headline ms-3">
+            <div className="col-lg-9 col-md-9 col-sm-12">
+            <h4 class="card-title blinker font-24 gradient-headline ms-3 mt-3">
             Trips Around the World
                 </h4>
               <p className="custom-paragraph m-3 pb-4">

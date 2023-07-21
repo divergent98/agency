@@ -17,7 +17,7 @@ function Products() {
     image: "",
     price: 0,
     category: "",
-
+    isFeatured: ""
   });
   const [show, setShow] = useState(false);
 
@@ -31,7 +31,8 @@ function Products() {
     date,
     image,
     price,
-    category
+    category,
+    isFeatured
     
   ) => {
     setUpdatedProduct((prev) => {
@@ -45,7 +46,7 @@ function Products() {
         image: image,
         price: price,
         category: category,
-
+        isFeatured: isFeatured
       };
     });
     handleShow();
@@ -167,7 +168,14 @@ function Products() {
             value={updatedProduct.category ? updatedProduct.category : ""}
             style={{ marginBottom: "1rem" }}
           />
- 
+ <Form.Label>Featured</Form.Label>
+          <Form.Control
+            placeholder="isFeatured"
+            name="isFeatured"
+            onChange={handleChange}
+            value={updatedProduct.isFeatured ? updatedProduct.isFeatured : ""}
+            style={{ marginBottom: "1rem" }}
+          />
         </Modal.Body>
         <Modal.Footer>
       
@@ -189,6 +197,7 @@ function Products() {
             <th>Date</th>
             <th>Price</th>
             <th>Category</th>
+            <th>Featured</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -202,6 +211,7 @@ function Products() {
                 <td>{product.date}</td>
                 <td>{product.price}</td>
                 <td>{product.category}</td>
+                <td>{product.isFeatured}</td>
                 <td>
                 <Button
                     
@@ -216,7 +226,7 @@ function Products() {
                           product.image,
                           product.price,
                           product.category,
-          
+                          product.isFeatured
                         )
                       }
                     >

@@ -16,24 +16,25 @@ export const FeaturedProducts  = () => {
       if (!products) return null;
       
         return (
-          <div class="row justify-content-center py-5 mb-5">
+          <div class="row justify-content-center py-lg-5 mb-5">
             <div class="col-12">
-              <h1 className='text-center mt-5 pb-5 gradient-headline big-headline'>
+              <h1 className='text-center mt-lg-5 pb-lg-5 gradient-headline big-headline'>
                 Most popular destinations
               </h1>
             </div>
             <div class="col-12">
-               <ListGroup className="container my-5 ">
+               <ListGroup className="container my-lg-5 ">
             {products.length > 0 ? (
-              <><div className="row">
+              <>
+              <div className="row">
                 {products.map((product) => {
-                  if(product.isFeatured === "true"){
+                  if(product.isFeatured === "true" && product.category === 'hot'){
                     return(       
              
-                    <div className="col-lg-4 col-md-12 col-sm-12" key={product._id}>      
+                    <div className="col-lg-4 col-md-12  col-sm-12" key={product._id}>      
                      <a href="#" className='card-link'>
                     
-                        <div class="content">
+                        <div class="content ">
                           <Link to={`/SingleProduct/${product._id}/`}>
                             <div key={product._id}>
                             <div class="content-overlay"></div>

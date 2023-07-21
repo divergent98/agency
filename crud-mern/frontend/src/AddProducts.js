@@ -15,7 +15,7 @@ function CreateProduct() {
     image:"",
     price:0,
     category:"",
-
+    isFeatured: "",
   });
   const handleChange = (event) => {
     console.log(event.target);
@@ -99,7 +99,13 @@ function CreateProduct() {
           placeholder="category"
           onChange={handleChange}
         />
-     
+         <Form.Label>Featured</Form.Label>
+      <Form.Control
+          name="featured"
+          value={product.featured}
+          placeholder="featured"
+          onChange={handleChange}
+        />
       </Form.Group>
       <Button onClick={handleClick} variant="secondary" className="mt-5">Add Product</Button>
     </Form>

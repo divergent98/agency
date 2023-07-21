@@ -7,8 +7,8 @@ export const Promotion  = () => {
         return (
         <div className='container-fluid'>
           <div className="row mx-y">
-            <div className='col-6 promotion-image' style={{ backgroundImage: `url(${yellowbus})` }}></div>
-            <div className='col-6 p-5 background-green align-middle'>
+            <div className='col-lg-6 col-md-12 col-sm-12 promotion-image' style={{ backgroundImage: `url(${yellowbus})` }}></div>
+            <div className='col-lg-6 col-md-12 col-sm-12 p-5 background-green align-middle'>
             <h3 className='gradient-headline'>
             Experience the Magic of a Yellow Road Trip Bus Adventure!
             </h3>
@@ -23,7 +23,7 @@ export const Promotion  = () => {
             </div>
           </div>
           <div className="row">
-            <div className='col-6 background-blue p-5 align-middle'>
+            <div className='col-lg-6 col-md-12 col-sm-12 background-blue p-5 align-middle'>
             <h3 className='gradient-headline'>
             Indulge in the Ultimate Luxury Getaway at our Philippines Resort
 
@@ -38,7 +38,7 @@ export const Promotion  = () => {
             <Link className='blinker capitalize decoration-none space-between font-18'>Read more...</Link>
             </div>
             
-            <div className='col-6 promotion-image' style={{ backgroundImage: `url(${luxpool})` }}></div>
+            <div className='col-lg-6 col-md-12 col-sm-12 promotion-image' style={{ backgroundImage: `url(${luxpool})` }}></div>
           </div>
         </div>
            

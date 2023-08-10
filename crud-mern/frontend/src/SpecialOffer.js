@@ -1,13 +1,15 @@
-import React from "react";
-import { Footer } from "./Footer";
+import React, { Component } from "react";
 import { Navigation } from "./Navigation";
+import { Footer } from "./Footer";
 
-export const SpecialOffer = () => {
-  return (
-    <>
-      <Navigation />
+const SpecialOffer = () => {
+    return (
+        <>
+              <Navigation />
+              <p>this is the special offer</p>
+              <Footer />
+        </>
+    )
+}
 
-      <Footer />
-    </>
-  );
-};
+export default SpecialOffer;

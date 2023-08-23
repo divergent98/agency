@@ -95,6 +95,11 @@ body {
 }
 .carousel-inner{
   overflow: visible !important;
+  height: 600px !important;
+
+}
+.carousel-item{
+  height: 600px !important;
 }
 .content-details h3 {
   color: #fff;
@@ -133,12 +138,11 @@ body {
   position: relative;
   overflow: auto;
   z-index: 10000000;
-  height: 43rem;
+  height: 39rem;
   width: 31rem;
-  margin-left: 5rem;
   background-position: center;
   background-size: cover;
-  top: 100px;
+  top: 50px;
   border-radius: 5rem;
 }
 .navbar-toggler:active {
@@ -238,7 +242,7 @@ body {
 }
 .custom-headline {
   font-family: "Blinker";
-  margin-top: 250px !important;
+  margin-top: 150px !important;
 
 }
 
@@ -406,6 +410,20 @@ body {
   transition: 0.5s;
   display: flex;
 }
+.btn-mobile {
+  background-image: linear-gradient(
+    315deg,
+    var(--blue) 0%,
+    var(--darkblue) 74%
+  );
+  width: 100px !important;
+  margin-top: -30px !important;
+  font-family: "Roboto Condensed";
+  font-size: 16px !important;
+  
+  transition: 0.5s;
+  display: flex;
+}
 .big-btn:hover {
   background-image: linear-gradient(
     315deg,
@@ -455,7 +473,29 @@ body {
   width: 200px !important;
   padding: 5px;
 }
-
+.custom-headline-mobile{
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+  
+}
+.custom-headline-mobile h1{
+  margin-bottom: 30px !important;
+  
+}
+.custom-headline-mobile h3{
+  font-size: 18px !important;
+  
+}
+.carousel-photo-mobile{
+  background-size: cover;
+  background-position: left;
+  height: 50vh;
+  width: 100vw;
+  margin-left: -12px;
+  clip-path: polygon(0 79%, 100% 0, 100% 100%, 0 100%);
+  position: relative;
+  top:-220px
+}
 .custom-link:hover {
   border-bottom: 4px solid;
   border-image: linear-gradient(left, var(--blue) 0%, var(--darkblue) 74%);
@@ -751,9 +791,8 @@ body {
 }
 .product-title{
   font-family: 'Roboto Condensed';
-  font-size: 42px;
+  font-size: 55px;
   color: var(--blue);
-  margin-left: 45px
 }
 .blog-author,
 .blog-body p{
@@ -770,6 +809,7 @@ body {
 
   height: 80vh;
   background-size: cover;
+  background-position: center;
   border-radius: 2rem;
 }
 
@@ -794,6 +834,8 @@ body {
 .product-item{
   margin-top: 10px;
   font-size: 20px;
+  font-family: "Roboto Condensed";
+  font-weight: lighter;
 }
 .product-button{
   width: 40%;

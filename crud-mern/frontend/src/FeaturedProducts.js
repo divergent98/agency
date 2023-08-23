@@ -17,7 +17,7 @@ export const FeaturedProducts  = () => {
       
         return (
           <div class="row justify-content-center py-lg-5 mb-5">
-            <div class="col-12">
+            <div class="col-12 mt-5">
               <h1 className='text-center mt-lg-5 pb-lg-5 gradient-headline big-headline'>
                 Most popular destinations
               </h1>

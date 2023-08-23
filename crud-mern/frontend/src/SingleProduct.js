@@ -257,7 +257,7 @@ const SingleProduct = () => {
     <section>
       <div className="col-4 px-5" onClick={toggleRegistration}></div>
       <Navigation />
-      <div className="banner"></div>
+
       <Modal
         className="mt-5 modal-lg modal-dialog modal-dialog-centered"
         isOpen={modalRegistration}
@@ -789,8 +789,7 @@ const SingleProduct = () => {
           ></div>
           <div className="col-6">
             <h2 className="product-title">{product.name}</h2>
-            <h2 className="product-price">$ {product.price}</h2>
-            <hr></hr>
+        
             <div className="product-body">
               <div className="my-3 border border-1 w-50 p-2">
                 <img className="calendar" src={calendar} />
@@ -802,8 +801,12 @@ const SingleProduct = () => {
                     <img src={check} />
                     <span className="product-item ">{item}</span>
                   </li>
-                ))}
-              </ul>
+                ))}   
+                <li className="product-price ps-2">        <img src={check} />$ {product.price}</li>
+              </ul>                
+            
+
+      
               <div>
                 <Link
                   class="btn custom-button save-changes-button big-btn text-light border-0 rounded-0 pt-3 pb-5 mt-5"

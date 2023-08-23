@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
-import { SpecialOfferProducts } from "./SpecialOfferProduct";
-const SpecialOffer = () => {
+import { HotToursProducts } from "./HotToursProducts";
+const HotTours = () => {
     return (
         <>
               <Navigation />
               <div className="banner"></div>
-            <SpecialOfferProducts/>
+            <HotToursProducts/>
               <Footer />
         </>
     )
 }
 
-export default SpecialOffer;
+export default HotTours;

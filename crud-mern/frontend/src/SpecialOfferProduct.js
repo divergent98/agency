@@ -3,7 +3,7 @@ import axios from "axios";
 import { ListGroup, ListGroupItem, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-export const RegularProducts = () => {
+export const SpecialOfferProducts = () => {
   const [products, setProducts] = React.useState(null);
 
   React.useEffect(() => {
@@ -16,16 +16,11 @@ export const RegularProducts = () => {
 
   return (
     <div className="container py-5">
-      <div className="row">
-        <h1 className="text-center mt-5 pb-5 gradient-headline big-headline">
-          Check out our offer
-        </h1>
-      </div>
       <ListGroup>
         {products.length > 0 ? (
           <div className="row ">
             {products.map((product) => {
-              if (product.isFeatured === "true" && product.category === "special") {
+              if (product.category === "special") {
                 return (
                   <div className="col-lg-3 col-md-3 col-sm-6">
                     <Link className="decoration-none">
@@ -70,9 +65,7 @@ export const RegularProducts = () => {
       </ListGroup>
       <div className="row justify-content-center">
 
-          <Link class="btn big-btn text-light border-0 rounded-0 my-5 py-3" to='/SpecialOffer'>
-            See more...
-          </Link>
+
 
       </div>
     </div>

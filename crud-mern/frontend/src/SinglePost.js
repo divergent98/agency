@@ -20,7 +20,7 @@ const SinglePost = () => {
   return (
     <section>
       <Navigation />
-      <div className="banner"></div>
+     
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-9">  

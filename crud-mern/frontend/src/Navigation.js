@@ -18,7 +18,7 @@ export const Navigation = () => {
     burger.classList.toggle("active");
   };
   return (
-    <div className="nav-bar">
+    <div className="nav-bar background-dark-gray">
       <Navbar className="hidden-big-screen bg-transparent z-index-3">
         <NavbarBrand href="/" className="me-auto">
           <img src={logo} alt="logo" className="logo" />
@@ -75,12 +75,12 @@ export const Navigation = () => {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="btn text-light mx-3 roboto font-18">
+              <Link className="btn text-light mx-3 roboto font-18" to="/SpecialOffer">
                 <span className="custom-link">Special Offers</span>
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="btn text-light mx-3 roboto font-18">
+              <Link className="btn text-light mx-3 roboto font-18" to='/HotTours'>
                 <span className="custom-link">Hot Tours</span>
               </Link>
             </NavItem>

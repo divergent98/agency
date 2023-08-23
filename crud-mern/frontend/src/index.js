@@ -17,6 +17,7 @@ import SinglePost from './SinglePost';
 import SingleProduct from './SingleProduct';
 import Reservation from './Reservation';
 import SpecialOffer from './SpecialOffer';
+import HotTours from './HotTours';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -30,6 +31,7 @@ root.render(
 <Route path="/create/product" element={<Products/>}/>
 <Route path="/BlogPosts" element={<BlogPosts/>}/>
 <Route path="/SpecialOffer" element={<SpecialOffer/>}/>
+<Route path="/HotTours" element={<HotTours/>}/>
 <Route path="/SinglePost/:postId" element={<SinglePost/>}/>
 <Route path="/SingleProduct/:productId" element={<SingleProduct/>}/>
 

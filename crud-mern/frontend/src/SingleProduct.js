@@ -802,7 +802,10 @@ const SingleProduct = () => {
                     <span className="product-item ">{item}</span>
                   </li>
                 ))}   
-                <li className="product-price ps-2">        <img src={check} />$ {product.price}</li>
+              <div className="my-3 border border-1 w-50 p-2">
+                <img src={check} />
+                <span className="product-item">$ {product.price}</span>
+              </div>
               </ul>                
             
 

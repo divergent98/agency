@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Navigation } from "./Navigation";
 import {
-  ListGroup,
-  ListGroupItem,
-  Button,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
+  Nav,
+  NavItem,
+  NavLink,
+  TabContent,
+  TabPane
 } from "reactstrap";
 import { Footer } from "./Footer";
+import OwlCarousel from 'react-owl-carousel';  
+import 'owl.carousel/dist/assets/owl.carousel.css';  
+import 'owl.carousel/dist/assets/owl.theme.default.css';  
 
 import iceland from "./img/iceland.jpg";
 import positano from "./img/positano.jpg";
@@ -20,7 +21,7 @@ import { Link } from "react-router-dom";
 
 export const BlogPosts = () => {
   const [posts, setPosts] = React.useState(null);
-
+  const [activeTab, setActiveTab] = React.useState("1");
   React.useEffect(() => {
     axios.get("/posts").then((response) => {
       setPosts(response.data);
@@ -29,6 +30,7 @@ export const BlogPosts = () => {
   if (!posts) return null;
   return (
     <>
+  
       <Navigation />
 
       <div>
@@ -125,13 +127,14 @@ export const BlogPosts = () => {
         </div>
       </div>
       <div className="container blog-container">
-        <div className="row justify-content-center mt-5">
+        <div className="row justify-content-center mt-5">           
+        <div className="col-lg-8 col-md-12 col-sm-12 my-5">
           {posts ? (
-            <div className="col-lg-8 col-md-12 col-sm-12 my-5">
+
               <div className="row">
                 <span className="tag">Highlighted</span>
                 <hr className="tag-line"></hr>
-              </div>
+             
               {
                 <div className="row">
                   {posts.map((post) => {
@@ -170,8 +173,105 @@ export const BlogPosts = () => {
             </div>
           ) : (
             ""
-          )}
+          )}  
+           <div>  
 
+       <div class='container-fluid' >     
+       <Nav tabs>
+    <NavItem>
+      <NavLink
+     
+        className={activeTab === "1" ? "active" : ""}
+      onClick={() => setActiveTab("1")}
+      >
+        Tab1
+      </NavLink>
+    </NavItem>
+    <NavItem>
+      <NavLink
+      className={activeTab === "2" ? "active" : ""}
+      onClick={() => setActiveTab("2")}
+      >
+        More Tabs
+      </NavLink>
+    </NavItem>
+  </Nav>
+  <TabContent activeTab={activeTab}>
+    <TabPane tabId="1">
+        <div>
+        <OwlCarousel items={3}  
+          className="owl-theme hidden-small-screen"  
+          loop  
+          nav  
+          margin={8} >  
+     if (!posts) return null;
+      </OwlCarousel>  
+      
+        </div>
+
+    </TabPane>
+    <TabPane tabId="2">
+    <div>
+    <OwlCarousel items={3}  
+          className="owl-theme hidden-small-screen"  
+          loop  
+          nav  
+          margin={8} >  
+          return(
+          {posts ? (
+
+<div className="row">
+  <span className="tag">Highlighted</span>
+  <hr className="tag-line"></hr>
+
+{
+  <div className="row">
+    {posts.map((post) => {
+      if (post.category === "highlight") {
+        return (
+          <div className="col-lg-4 col-md-4 col-sm-12">
+            <Link
+              to={`/SinglePost/${post._id}/`}
+              className="decoration-none"
+            >
+              <figure
+                class="snip background-color"
+                key={post._id}
+              >
+                <img src={post.image} alt="sample85" />
+
+                <figcaption>
+                  <h3>{post.title}</h3>
+                  <hr className="snip-line"></hr>
+                  <div className="author">
+                    <img className="avatar me-3" src={avatar} />
+                    <p>Admin</p>
+                  </div>
+
+                  <hr className="snip-line"></hr>
+                  <p>{post.description}</p>
+                </figcaption>
+              </figure>
+            </Link>
+          </div>
+        );
+      }
+    })}
+  </div>
+}
+</div>
+) : (
+""
+)}  )
+      </OwlCarousel>  
+        </div>
+    </TabPane>
+  </TabContent>    
+      
+      </div>  
+
+      </div>  
+ </div>
           <div className="col-lg-3 col-sm-12 ms-lg-5 mt-5">
             <div className="row">
               <span className="tag">News</span>
@@ -224,6 +324,7 @@ export const BlogPosts = () => {
           </div>
         </div>
       </div>
+   
       <Footer />
     </>
   );

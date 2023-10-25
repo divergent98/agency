@@ -43,11 +43,7 @@ export const Navigation = () => {
                 <span className="custom-link">Hot Tours</span>
               </Link>
             </NavItem>
-            <NavItem>
-              <Link className="btn w-100">
-                <span className="custom-link">Contact</span>
-              </Link>
-            </NavItem>
+     
             <NavItem>
               <Link
                 to="/Login"
@@ -84,11 +80,7 @@ export const Navigation = () => {
                 <span className="custom-link">Hot Tours</span>
               </Link>
             </NavItem>
-            <NavItem>
-              <Link className="btn text-light mx-3 roboto ">
-                <span className="custom-link">Contact</span>
-              </Link>
-            </NavItem>
+         
             <NavItem className="ms-5 ">
               <Link to="/Login">
                 <div className="custom-button link-button roboto font-18">

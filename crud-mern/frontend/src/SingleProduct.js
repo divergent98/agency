@@ -14,6 +14,7 @@ import cancel from "./img/cancel.png";
 import ticket from "./img/tickets.png";
 import left from "./img/left.png";
 import right from "./img/right.png";
+import background from "./img/background-real-blue.png"
 const SingleProduct = () => {
   const [reservation, setReservation] = useState({
     name: "",
@@ -255,9 +256,6 @@ const SingleProduct = () => {
 
   return (
     <section>
-      <div className="col-4 px-5" onClick={toggleRegistration}></div>
-      <Navigation />
-
       <Modal
         className="mt-5 modal-lg modal-dialog modal-dialog-centered"
         isOpen={modalRegistration}
@@ -781,14 +779,21 @@ const SingleProduct = () => {
           <div>Confirmed</div>
         </ModalBody>
       </Modal>
+      <Navigation />
+
+      
+      <div className="background"  >
       <div className="container product-view">
         <div className="row justify-content-center gx-5">
           <div
-            className="col-5 me-5 product-image"
-            style={{ backgroundImage: `url(${product.image})` }}
-          ></div>
-          <div className="col-6">
-            <h2 className="product-title">{product.name}</h2>
+            className="col-5 "
+       
+          >
+            <img className="product-image align-middle" src={product.image}/>
+          </div>
+          <div className="col-7">
+            <div className="row">
+              <div className="col-7">  <h2 className="product-title">{product.name}</h2>
         
             <div className="product-body">
               <div className="my-3 border border-1 w-50 p-2">
@@ -818,10 +823,41 @@ const SingleProduct = () => {
                   Book now
                 </Link>
               </div>
+            </div></div>
+              <div className="col-5 background-gray">
+              <div className="row">
+              <span className="tag ms-3 mt-3">Suggested</span>
+              <hr className="tag-line short-line ms-3"></hr>
             </div>
+              {products
+                ? products.map((product) => {
+                    if (product.category === "special") {
+                      return (
+                        <div className="row ms-2 news-post">
+                          <div
+                            className="col-4 news-post-image"
+                            style={{ backgroundImage: `url(${product.image})` }}
+                          ></div>
+                          <div className="col-8">
+                            <h3 className="font-18 blinker">{product.name}</h3>
+                            <div className="author">
+                              
+                              <p>${product.price}</p>
+                            </div>
+                          </div>
+
+                          <hr className="snip-line"></hr>
+                        </div>
+                      );
+                    }
+                  })
+                : ""}
+              </div>
+            </div>
+          
           </div>
         </div>
-      </div>
+      </div></div>
       <Footer />
     </section>
   );

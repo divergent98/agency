@@ -71,6 +71,12 @@ const productSchema = mongoose.Schema({
   },
 });
 const Product = mongoose.model("Product", productSchema);
+
+//-------------------------------------------------------USER
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+});
 //--------------------------------------------------------------------------------------reservation schema
 const reservationSchema = mongoose.Schema({
   name: {
@@ -235,6 +241,9 @@ app.delete("/deleteReservation/:id", (req, res) => {
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
 });
+
+//-------------------------------------------------------USER
+
 //---------------------------------------------------------------------------------------------------
 app.listen(3001, function () {
   console.log("Server is running");

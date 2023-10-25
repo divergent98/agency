@@ -29,10 +29,10 @@ export const MyCarousel = () => {
                   if (product.category === "carousel") {
                     return (
                       <div class="carousel-item active background-dark-gray">
-                        <div className="container">
+                        <div className="container-fluid">
                           <div class="row justify-content-center">
-                            <div class="col-lg-4 align-middle custom-headline">
-                              <div class="text-space">
+                            <div class="col-lg-5 custom-headline">
+                              <div >
                               <h1>{product.name}</h1>
                               <h3>{product.description2}</h3></div>
                               <div className="row ">

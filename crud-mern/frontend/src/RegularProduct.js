@@ -28,7 +28,7 @@ export const RegularProducts = () => {
               if (product.isFeatured === "true" && product.category === "special") {
                 return (
                   <div className="col-lg-3 col-md-3 col-sm-6">
-                    <Link className="decoration-none">
+                    <Link className="decoration-none" to={`/SingleProduct/${product._id}/`}>
                     <figure class="snip regular-product" key={product._id}>
                       <img src={product.image} alt="sample85" />
                       <svg

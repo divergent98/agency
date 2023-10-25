@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import airplane_wing from "./img/airplane-wing.jpg"
 function LoginForm() {
   const user = {
     username: "admin",
@@ -31,45 +31,57 @@ function LoginForm() {
     }
   };
   return (
-    <div className="row pt-5 justify-content-center ">
-      <div className="spacer"></div>
-      <div className="col-4 mt-5 p-4 background-color">
-        <h1 className="text-center my-5">Login</h1>
+    <div className="row">
+      <div
+        className="col-7 background"
+        style={{
+          backgroundImage: `url(${airplane_wing})`,
+        }}
+      >
+        <div className="login-slogan">
+          <h1>Explore More,</h1>
+        <h1>Worry Less.</h1>
+        </div>
+     
+      </div>
+      <div className="col-5  background">
+        <div>
+        <h1 className="text-center text-secondary blinker">Login</h1>
 
-        <Form>
+        <Form className="roboto">
           <Form.Group>
-            <Form.Label>Username</Form.Label>
+     
             <Form.Control
               name="username"
+              className="mb-3"
               value={input.username}
               placeholder="Username"
               onChange={handleChange}
             />
-            <Form.Label>Password</Form.Label>
+
             <Form.Control
               name="password"
               value={input.password}
               placeholder="password"
               onChange={handleChange}
             />
+         
+  
           </Form.Group>
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <button
+     <button
                 onClick={handleClick}
-                className="mt-5 btn custom-btn btn-8"
+                className="mt-5 btn btn-secondary w-100"
               >
                 Login
               </button>
-            </div>
-          </div>
+        
         </Form>
-        <div class="row justify-content-center">
-          <div class="col-6 text-center">
-            <button onClick={() => navigate(-1)} className="mt-5 btn link">
-              <p>Back</p>
+
+
+            <button onClick={() => navigate(-1)} className="mt-5 btn link w-100">
+              Back to website
             </button>
-          </div>
+
         </div>
       </div>
     </div>

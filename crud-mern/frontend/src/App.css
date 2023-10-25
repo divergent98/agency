@@ -29,6 +29,9 @@ body {
   background-position: center;
   box-shadow: inset 0px 100px 280px -65px var(--gray);
 }
+.short-line{
+  width: 90% !important;
+}
 
 *,
 *:before,
@@ -136,12 +139,14 @@ body {
   position: relative;
   overflow: auto;
   z-index: 10000000;
-  height: 39rem;
-  width: 31rem;
+  height: 650px;
+  width: 50rem;
   background-position: center;
   background-size: cover;
-  top: 50px;
-  border-radius: 5rem;
+  top: -50px;
+ 
+clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+
 }
 .navbar-toggler:active {
   border: none !important;
@@ -194,6 +199,32 @@ body {
 }
 .background-dark-gray {
   background-color: #252525;
+}
+.background{
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-slogan{
+  position: absolute;
+
+}
+.login-slogan h1{
+  font-family: 'Blinker';
+  font-weight: bolder;
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-size: 100px;
+  
+}
+.login-button {
+  width: 250px !important;
+  margin-top: 25px !important;
+
 }
 .burger span {
   width: 100%;
@@ -312,8 +343,10 @@ body {
 }
 .custom-headline h1 {
   margin-bottom: 50px;
-  font-size: 70px;
-  color: #fff;
+  font-size: 100px;
+  background: linear-gradient(315deg, var(--blue) 0%, var(--darkblue) 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: "Blinker";
   font-weight: 600;
 }
@@ -801,8 +834,9 @@ body {
   line-height: 45px;
 }
 .product-title {
-  font-family: "Roboto Condensed";
-  font-size: 55px;
+  font-family: "Blinker";
+  font-weight: 700;
+  font-size: 75px;
   color: var(--blue);
 }
 .blog-author,
@@ -813,14 +847,17 @@ body {
   font-weight: lighter;
 }
 .product-view {
-  margin-top: 50px;
+  padding-top: 50px;
   min-height: 100vh;
 }
 .product-image {
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-  border-radius: 2rem;
+  margin-top: 70px;
+  height: 60vh;
+  width: 60vh;
+  object-fit: cover;
+  object-position: center;
+  -moz-box-shadow: 103px -99px 0px -45px rgba(196,234,242,1);
+  box-shadow: 103px -99px 0px -45px #f8f8f8;
 }
 
 .product-price {
@@ -1184,7 +1221,20 @@ body {
   opacity: 1;
   z-index: 1;
 }
-
+.search-bar{
+  background-color: #f8f8f8;
+  border-radius: 7px;
+  color: var(--darkblue);
+  font-family: 'Roboto Condensed'; 
+}
+.custom-border-right{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.custom-border-left{
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
 @media (max-width: 920px) {
   .hidden-big-screen {
     display: block !important;

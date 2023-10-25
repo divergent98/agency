@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 export const HotToursProducts = () => {
   const [products, setProducts] = React.useState(null);
+  const [searchDate, setSearchDate] = React.useState(null);
+  const [searchLocation, setSearchLocation] = React.useState(null);
+  const [searchBudget, setSearchBudget] = React.useState(null);
 
   React.useEffect(() => {
     axios.get("/products").then((response) => {
@@ -13,14 +16,63 @@ export const HotToursProducts = () => {
   }, []);
 
   if (!products) return null;
-
+  const specialProducts = new Array;
+  products.forEach((product) =>{
+    if (product.category === "hot") {
+      specialProducts.push(product);
+    }
+  })
+  const filteredProducts = specialProducts.filter((product) => {
+    const dateMatch = searchDate 
+    ? product.date.toString().includes(searchDate.toLowerCase())
+    : true;
+    console.log(searchDate);
+    console.log(product.date)
+    const locationMatch = searchLocation
+    ? product.name.toLowerCase().includes(searchLocation.toLowerCase())
+    : true;
+    
+    const budgetMatch = searchBudget 
+    ? product.price < searchBudget 
+    : true;
+    return dateMatch && locationMatch && budgetMatch;
+  });
   return (
     <div className="container py-5">
+         <div className="row p-5 m-5 justify-content-center search-bar"> 
+        <div className="col-lg-4">
+          <label className="form-label custom-search-label">Search by Date: </label>
+          <input
+            className="form-control"
+            type="date"
+            value={searchDate}
+            onChange={(e) => setSearchDate(e.target.value)}
+          />
+        </div>
+        <div className="col-lg-4">
+          <label className="form-label custom-search-label">Search by Location: </label>
+          <input
+            className="form-control"
+            type="text"
+            value={searchLocation}
+            onChange={(e) => setSearchLocation(e.target.value)}
+          />
+        </div>
+        <div className="col-lg-4">
+          <label className="form-label custom-search-label">Search by Budget: </label>
+          <input
+            className="form-control"
+            type="text"
+            value={searchBudget}
+            onChange={(e) => setSearchBudget(e.target.value)}
+          />
+        </div>
+      </div>
       <ListGroup>
-        {products.length > 0 ? (
+        {filteredProducts.length > 0 ? (
           <div className="row ">
-            {products.map((product) => {
-              if (product.category === "hot") {
+            {filteredProducts.map((product) => {
+          
                 return (
                   <div className="col-lg-3 col-md-3 col-sm-6">
                     <Link className="decoration-none">
@@ -54,13 +106,11 @@ export const HotToursProducts = () => {
                     </Link>
                   </div>
                 );
-              } else {
-                <h4 className="text-center">no products </h4>;
-              }
+          
             })}{" "}
           </div>
         ) : (
-          <h4 className="text-center">no products </h4>
+          <h4 className="text-center">no results...</h4>
         )}
       </ListGroup>
       <div className="row justify-content-center">

@@ -61,6 +61,12 @@ export const Footer = () => {
             <h6 class="gradient-headline font-24 blinker mt-4 mb-3 footer-headline">
               Contact us
             </h6>
+            <ul className="font-18  list-decoration">
+              <li><Link className="decoration-none text-light">123 Street, New York, USA</Link></li>
+              <li><Link className="decoration-none text-light">+012 345 67890</Link></li>
+              <li><Link className="decoration-none text-light">info@example.com</Link></li>
+
+            </ul>
           </div>
         </div>
       </div>

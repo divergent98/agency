@@ -5,7 +5,7 @@ import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Heading } from "./Heading";
-
+import delete_icon from "./img/trash-bin.png";
 function Reservation() {
   const navigate = useNavigate();
   const [reservations, setReservation] = useState([]);
@@ -127,7 +127,7 @@ function Reservation() {
       
       </div>
 </div>
-<div className="row p-5 m-5 justify-content-center search-bar"> 
+<div className="container"><div className="row p-5 mt-5 justify-content-center search-bar"> 
         <div className="col-lg-3">
           <label className="form-label custom-search-label">Search by Date: </label>
           <input
@@ -165,11 +165,12 @@ function Reservation() {
             onChange={(e) => setSearchPhone(e.target.value)}
           />
         </div>
-      </div>
+      </div></div>
+
       { reservations ? (
         <>
             <div className="container">
-            <div className="row mt-5 ms-1 me-5">
+            <div className="row mt-5">
       <table className="table table-striped table-hover table-bordered">
         <thead>
           <tr className="blinker font-18">
@@ -214,11 +215,12 @@ function Reservation() {
                     </Button> */}
                     <Button
                     variant="secondary"
-                    className="delete-button custom-button btn text-light border-0 rounded-0 m-2"
+                    className="btn border-0 bg-transparent"
                       onClick={() => deleteReservation(reservation._id)}
                     >
-                      Delete
+                       <img src={delete_icon} />
                     </Button>
+                  
                 </td>
               </tr>
            
@@ -280,7 +282,7 @@ function Reservation() {
                 className="delete-button custom-button btn text-light border-0 rounded-0 m-2"
                   onClick={() => deleteReservation(reservation._id)}
                 >
-                  Delete
+                   <img src={delete_icon} />
                 </Button>
             </td>
           </tr>

@@ -33,7 +33,7 @@ const SinglePost = () => {
               
                 <p className="blog-author mt-5">Autor: Admin</p>
                 <hr></hr>
-                <div className="blog-body" dangerouslySetInnerHTML={{__html: htmlString}} />
+                <div className="blog-body mb-5" dangerouslySetInnerHTML={{__html: htmlString}} />
             </div>
           </div>
         </div>

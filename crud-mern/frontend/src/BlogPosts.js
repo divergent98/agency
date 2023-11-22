@@ -226,22 +226,21 @@ export const BlogPosts = () => {
                 </Nav>
                 <TabContent activeTab={activeTab}>
                   <TabPane tabId="1">
-                    <div>
-                      <OwlCarousel
-                        items={1}
-                        className="owl-theme hidden-small-screen"
+                  <OwlCarousel
+                        items={3}
+                        className="owl-theme hidden-small-screen row"
                         loop
-                        nav
+               
                         margin={8}
                       >
                         {posts ? (
-                          <div className="row">
-                            {
-                              <div className="row">
+   
+                            
+                            <>
                                 {posts.map((post) => {
                                   if (post.category === "adventure") {
                                     return (
-                                      <div className="col-lg-4 col-md-4 col-sm-12">
+                                      <div >
                                         <Link
                                           to={`/SinglePost/${post._id}/`}
                                           className="decoration-none"
@@ -275,72 +274,86 @@ export const BlogPosts = () => {
                                     );
                                   }
                                 })}
-                              </div>
-                            }
-                          </div>
+              
+                            </>
+                 
                         ) : (
                           ""
                         )}{" "}
                       </OwlCarousel>
                       <OwlCarousel
-                        items={1}
-                        className="owl-theme hidden-big-screen"
+                        items={2}
+                        className="owl-theme hidden-big-screen row"
                         loop
-                        nav
-                        margin={8}
-                      >
-                        <div className="mt-5">
-                          {posts
-                            ? posts.map((post) => {
-                                if (post.category === "adventure") {
-                                  return (
-                                    <div className="row ms-2 news-post">
-                                      <div
-                                        className="col-4 news-post-image"
-                                        style={{
-                                          backgroundImage: `url(${post.image})`,
-                                        }}
-                                      ></div>
-                                      <div className="col-8">
-                                        <h3 className="font-18 blinker">
-                                          {post.title}
-                                        </h3>
-                                        <div className="author">
-                                          <img
-                                            className="avatar me-3"
-                                            src={avatar}
-                                          />
-                                          <p>Admin</p>
-                                        </div>
-                                      </div>
-
-                                      <hr className="snip-line"></hr>
-                                    </div>
-                                  );
-                                }
-                              })
-                            : ""}
-                        </div>
-                      </OwlCarousel>
-                    </div>
-                  </TabPane>
-                  <TabPane tabId="2">
-                    <div>
-                      <OwlCarousel
-                        items={1}
-                        className="owl-theme hidden-small-screen"
-                        loop
-                        nav
+               
                         margin={8}
                       >
                         {posts ? (
-                          <div className="row">
-                            {
-                              <div className="row">
+   
+                            
+                            <>
+                                {posts.map((post) => {
+                                  if (post.category === "adventure") {
+                                    return (
+                                      <div >
+                                        <Link
+                                          to={`/SinglePost/${post._id}/`}
+                                          className="decoration-none"
+                                        >
+                                          <figure
+                                            class="snip-small background-color"
+                                            key={post._id}
+                                          >
+                                            <img
+                                              src={post.image}
+                                              alt="sample85"
+                                            />
+
+                                            <figcaption>
+                                              <h3>{post.title}</h3>
+                                              <hr className="snip-line"></hr>
+                                              <div className="author">
+                                                <img
+                                                  className="avatar me-3"
+                                                  src={avatar}
+                                                />
+                                                <p>Admin</p>
+                                              </div>
+
+                                              <hr className="snip-line"></hr>
+                                              <p>{post.description}</p>
+                                            </figcaption>
+                                          </figure>
+                                        </Link>
+                                      </div>
+                                    );
+                                  }
+                                })}
+              
+                            </>
+                 
+                        ) : (
+                          ""
+                        )}{" "}
+                      </OwlCarousel>
+                  </TabPane>
+                  <TabPane tabId="2">
+                    <div >
+                      <OwlCarousel
+                        items={3}
+                        className="owl-theme hidden-small-screen row"
+                        loop
+               
+                        margin={8}
+                      >
+                        {posts ? (
+   
+                            
+                            <>
                                 {posts.map((post) => {
                                   if (post.category === "advice") {
                                     return (
-                                      <div className="col-lg-4 col-md-4 col-sm-12">
+                                      <div >
                                         <Link
                                           to={`/SinglePost/${post._id}/`}
                                           className="decoration-none"
@@ -374,52 +387,67 @@ export const BlogPosts = () => {
                                     );
                                   }
                                 })}
-                              </div>
-                            }
-                          </div>
+              
+                            </>
+                 
                         ) : (
                           ""
                         )}{" "}
                       </OwlCarousel>
                       <OwlCarousel
-                        items={1}
-                        className="owl-theme hidden-big-screen"
+                        items={2}
+                        className="owl-theme hidden-big-screen row"
                         loop
-                        nav
+               
                         margin={8}
                       >
-                        <div className="mt-5">
-                          {posts
-                            ? posts.map((post) => {
-                                if (post.category === "advice") {
-                                  return (
-                                    <div className="row ms-2 news-post">
-                                      <div
-                                        className="col-4 news-post-image"
-                                        style={{
-                                          backgroundImage: `url(${post.image})`,
-                                        }}
-                                      ></div>
-                                      <div className="col-8">
-                                        <h3 className="font-18 blinker">
-                                          {post.title}
-                                        </h3>
-                                        <div className="author">
-                                          <img
-                                            className="avatar me-3"
-                                            src={avatar}
-                                          />
-                                          <p>Admin</p>
-                                        </div>
-                                      </div>
+                        {posts ? (
+   
+                            
+                            <>
+                                {posts.map((post) => {
+                                  if (post.category === "advice") {
+                                    return (
+                                      <div >
+                                        <Link
+                                          to={`/SinglePost/${post._id}/`}
+                                          className="decoration-none"
+                                        >
+                                          <figure
+                                            class="snip-small background-color"
+                                            key={post._id}
+                                          >
+                                            <img
+                                              src={post.image}
+                                              alt="sample85"
+                                            />
 
-                                      <hr className="snip-line"></hr>
-                                    </div>
-                                  );
-                                }
-                              })
-                            : ""}
-                        </div>
+                                            <figcaption>
+                                              <h3>{post.title}</h3>
+                                              <hr className="snip-line"></hr>
+                                              <div className="author">
+                                                <img
+                                                  className="avatar me-3"
+                                                  src={avatar}
+                                                />
+                                                <p>Admin</p>
+                                              </div>
+
+                                              <hr className="snip-line"></hr>
+                                              <p>{post.description}</p>
+                                            </figcaption>
+                                          </figure>
+                                        </Link>
+                                      </div>
+                                    );
+                                  }
+                                })}
+              
+                            </>
+                 
+                        ) : (
+                          ""
+                        )}{" "}
                       </OwlCarousel>
                     </div>
                   </TabPane>
@@ -461,23 +489,31 @@ export const BlogPosts = () => {
               <span className="tag">Archive</span>
               <hr className="tag-line"></hr>
             </div>
-            <ul className="list roboto font-24 fw-normal ms-0 ps-0">
-              <li>
-                <a href="#">November 2022</a>
-              </li>
-              <li>
-                <a href="#">October 2022</a>
-              </li>
-              <li>
-                <a href="#">September 2022</a>
-              </li>
-              <li>
-                <a href="#">August 2022</a>
-              </li>
-              <li>
-                <a href="#">July 2022</a>
-              </li>
-            </ul>
+            <div>
+              {posts
+                ? posts.map((post) => {
+                    if (post.category === "news") {
+                      return (
+                        <div className="row ms-2 news-post">
+                          <div
+                            className="col-4 news-post-image"
+                            style={{ backgroundImage: `url(${post.image})` }}
+                          ></div>
+                          <div className="col-8">
+                            <h3 className="font-18 blinker">{post.title}</h3>
+                            <div className="author">
+                              <img className="avatar me-3" src={avatar} />
+                              <p>Admin</p>
+                            </div>
+                          </div>
+
+                          <hr className="snip-line"></hr>
+                        </div>
+                      );
+                    }
+                  })
+                : ""}
+            </div>
           </div>
         </div>
       </div>

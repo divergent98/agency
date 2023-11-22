@@ -5,8 +5,8 @@ import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Heading } from "./Heading";
-
-
+import delete_icon from "./img/trash-bin.png";
+import edit_icon from "./img/pen.png";
 function Products() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -250,8 +250,7 @@ function Products() {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <div className="row p-5 m-5 justify-content-center search-bar"> 
+      <div className="container">   <div className="row p-5 mt-5 justify-content-center search-bar"> 
         <div className="col-lg-4">
           <label className="form-label custom-search-label">Search by Date: </label>
           <input
@@ -279,11 +278,12 @@ function Products() {
             onChange={(e) => setSearchBudget(e.target.value)}
           />
         </div>
-      </div>
+      </div></div>
+   
       {filteredProducts.length > 0 ? (
         <>
             <div className="container">
-            <div className="row mt-5 ms-1 me-5">
+            <div className="row mt-5">
       <table className="table table-striped table-hover table-bordered">
         <thead>
           <tr className="blinker font-18">
@@ -311,7 +311,7 @@ function Products() {
                 <td>
                 <Button
                     
-                      className="edit-button custom-button btn text-light border-0 rounded-0 m-2"
+                    className="btn border-0 bg-transparent"
                       onClick={() =>
                         updateProduct(
                           product._id,
@@ -326,15 +326,16 @@ function Products() {
                         )
                       }
                     >
-                      Edit
+                     <img src={edit_icon} />
                     </Button>
                     <Button
                     variant="secondary"
-                    className="delete-button custom-button btn text-light border-0 rounded-0 m-2"
+                    className="btn border-0 bg-transparent"
                       onClick={() => deleteProduct(product._id)}
                     >
-                      Delete
+                   <img src={delete_icon} />
                     </Button>
+              
                 </td>
               </tr>
            
@@ -376,7 +377,7 @@ function Products() {
             <td>
             <Button
                 
-                  className="edit-button custom-button btn text-light border-0 rounded-0 m-2"
+                className="btn border-0 bg-transparent"
                   onClick={() =>
                     updateProduct(
                       product._id,
@@ -391,14 +392,14 @@ function Products() {
                     )
                   }
                 >
-                  Edit
+                      <img src={edit_icon} />
                 </Button>
                 <Button
                 variant="secondary"
-                className="delete-button custom-button btn text-light border-0 rounded-0 m-2"
+                className="btn border-0 bg-transparent"
                   onClick={() => deleteProduct(product._id)}
                 >
-                  Delete
+             <img src={delete_icon} />
                 </Button>
             </td>
           </tr>

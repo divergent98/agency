@@ -1295,4 +1295,43 @@ clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
   .title-space-small {
     height: 100px;
   }
+  .snip-small{
+    font-family: "Blinker";
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 20px;
+    max-width: 200px;
+    width: 100%;
+    background: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-size: 12px;
+    transition: 0.5s;
+    transform: scale(0.97);
+  }
+  .snip-small h3{
+    font-size: 16px;
+    background: linear-gradient(315deg, var(--darkblue) 0%, var(--blue) 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Blinker";
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .snip-small img {
+    width: 100%;
+    height: 100px;
+    vertical-align: top;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+  }
+  .snip-small .snip-line{
+    margin-top: -2px;
+    margin-bottom: 2px;
+  }
+  .snip-small p{
+    font-size: 14px;
+  }
 }

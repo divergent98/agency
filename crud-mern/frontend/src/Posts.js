@@ -5,6 +5,8 @@ import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { Heading } from "./Heading";
+import delete_icon from "./img/trash-bin.png";
+import edit_icon from "./img/pen.png";
 function Posts() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
@@ -214,7 +216,7 @@ function Posts() {
 
                     <img src={post.image} className="postsImageAdmin"></img>
                     <div className="mt-5">
-                      <Button  className="edit-button roboto custom-button btn text-light border-0 rounded-0 m-2"
+                      <Button                 className="btn border-0 bg-transparent"
                       
                         onClick={() =>
                           updatePost(
@@ -227,11 +229,11 @@ function Posts() {
                           )
                         }
                       >
-                        Edit
+                                      <img src={edit_icon} />
                       </Button>
 
-                      <Button onClick={() => deletePost(post._id)} className="delete-button roboto custom-button btn text-light border-0 rounded-0 m-2">
-                        Delete
+                      <Button onClick={() => deletePost(post._id)}                 className="btn border-0 bg-transparent">
+                      <img src={delete_icon} />
                       </Button>
                     </div>
                   </div>
@@ -256,7 +258,7 @@ function Posts() {
 
                     <img src={post.image} className="postsImageAdmin"></img>
                     <div className="mt-5">
-                      <Button  className="edit-button roboto custom-button btn text-light border-0 rounded-0 m-2"
+                      <Button                  className="btn border-0 bg-transparent"
                       
                         onClick={() =>
                           updatePost(
@@ -269,11 +271,11 @@ function Posts() {
                           )
                         }
                       >
-                        Edit
+                           <img src={edit_icon} />
                       </Button>
 
-                      <Button onClick={() => deletePost(post._id)} className="delete-button roboto custom-button btn text-light border-0 rounded-0 m-2">
-                        Delete
+                      <Button onClick={() => deletePost(post._id)}                 className="btn border-0 bg-transparent">
+                      <img src={delete_icon} />
                       </Button>
                     </div>
                   </div>
